@@ -1,0 +1,107 @@
+Change Dir: '/home/pc/Avant-Garde/Avant-Garde-1/build'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile -j1 blacknode_app
+/usr/bin/cmake -S/home/pc/Avant-Garde/Avant-Garde-1 -B/home/pc/Avant-Garde/Avant-Garde-1/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/gmake  -f CMakeFiles/Makefile2 blacknode_app
+gmake[1]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+/usr/bin/cmake -S/home/pc/Avant-Garde/Avant-Garde-1 -B/home/pc/Avant-Garde/Avant-Garde-1/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 18
+/usr/bin/gmake  -f CMakeFiles/Makefile2 CMakeFiles/blacknode_app.dir/all
+gmake[2]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+/usr/bin/gmake  -f _deps/glfw-build/src/CMakeFiles/glfw.dir/build.make _deps/glfw-build/src/CMakeFiles/glfw.dir/depend
+gmake[3]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+cd /home/pc/Avant-Garde/Avant-Garde-1/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pc/Avant-Garde/Avant-Garde-1 /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-src/src /home/pc/Avant-Garde/Avant-Garde-1/build /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/DependInfo.cmake "--color="
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/context.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/egl_context.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/glx_context.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/init.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/input.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/linux_joystick.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/monitor.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/osmesa_context.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/posix_thread.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/posix_time.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/vulkan.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/window.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/x11_init.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/x11_monitor.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/x11_window.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Dependencies file "_deps/glfw-build/src/CMakeFiles/glfw.dir/xkb_unicode.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-build/src/CMakeFiles/glfw.dir/compiler_depend.internal".
+Consolidate compiler generated dependencies of target glfw
+gmake[3]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+/usr/bin/gmake  -f _deps/glfw-build/src/CMakeFiles/glfw.dir/build.make _deps/glfw-build/src/CMakeFiles/glfw.dir/build
+gmake[3]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+gmake[3]: Nothing to be done for '_deps/glfw-build/src/CMakeFiles/glfw.dir/build'.
+gmake[3]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+[ 44%] Built target glfw
+/usr/bin/gmake  -f _deps/glad-build/CMakeFiles/glad-generate-files.dir/build.make _deps/glad-build/CMakeFiles/glad-generate-files.dir/depend
+gmake[3]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+cd /home/pc/Avant-Garde/Avant-Garde-1/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pc/Avant-Garde/Avant-Garde-1 /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-src /home/pc/Avant-Garde/Avant-Garde-1/build /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-build /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-build/CMakeFiles/glad-generate-files.dir/DependInfo.cmake "--color="
+gmake[3]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+/usr/bin/gmake  -f _deps/glad-build/CMakeFiles/glad-generate-files.dir/build.make _deps/glad-build/CMakeFiles/glad-generate-files.dir/build
+gmake[3]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+gmake[3]: Nothing to be done for '_deps/glad-build/CMakeFiles/glad-generate-files.dir/build'.
+gmake[3]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+[ 44%] Built target glad-generate-files
+/usr/bin/gmake  -f _deps/glad-build/CMakeFiles/glad.dir/build.make _deps/glad-build/CMakeFiles/glad.dir/depend
+gmake[3]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+cd /home/pc/Avant-Garde/Avant-Garde-1/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pc/Avant-Garde/Avant-Garde-1 /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-src /home/pc/Avant-Garde/Avant-Garde-1/build /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-build /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-build/CMakeFiles/glad.dir/DependInfo.cmake "--color="
+Dependencies file "_deps/glad-build/CMakeFiles/glad.dir/src/glad.c.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-build/CMakeFiles/glad.dir/compiler_depend.internal".
+Consolidate compiler generated dependencies of target glad
+gmake[3]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+/usr/bin/gmake  -f _deps/glad-build/CMakeFiles/glad.dir/build.make _deps/glad-build/CMakeFiles/glad.dir/build
+gmake[3]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+gmake[3]: Nothing to be done for '_deps/glad-build/CMakeFiles/glad.dir/build'.
+gmake[3]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+[ 55%] Built target glad
+/usr/bin/gmake  -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/depend
+gmake[3]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+cd /home/pc/Avant-Garde/Avant-Garde-1/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/pc/Avant-Garde/Avant-Garde-1 /home/pc/Avant-Garde/Avant-Garde-1 /home/pc/Avant-Garde/Avant-Garde-1/build /home/pc/Avant-Garde/Avant-Garde-1/build /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/DependInfo.cmake "--color="
+Dependencies file "CMakeFiles/blacknode.dir/src/NetworkManager.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/core/EventBus.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/core/Logger.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/core/NativeBridge.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/core/StateMachine.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/net/BackpressureDetector.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o.d" is newer than depends file "/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles/blacknode.dir/compiler_depend.internal".
+Consolidate compiler generated dependencies of target blacknode
+gmake[3]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+/usr/bin/gmake  -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/build
+gmake[3]: Entering directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+[ 55%] Building CXX object CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o
+/usr/bin/c++ -Dblacknode_EXPORTS -I/home/pc/Avant-Garde/Avant-Garde-1/src -I/home/pc/Avant-Garde/Avant-Garde-1/src/core -I/home/pc/Avant-Garde/Avant-Garde-1/src/net -I/home/pc/Avant-Garde/Avant-Garde-1/src/ui -I/home/pc/Avant-Garde/Avant-Garde-1/src/render -I/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/include -I/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glm-src -I/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-build/include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wall -Wextra -Wno-unused-parameter -MD -MT CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o -MF CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o.d -o CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.cpp
+In file included from /home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.cpp:1:
+/home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h:51:10: error: ‘void GLRenderer::setSceneGraph(const std::shared_ptr<SceneGraph>&)’ cannot be overloaded with ‘void GLRenderer::setSceneGraph(const std::shared_ptr<SceneGraph>&)’
+   51 |     void setSceneGraph(const std::shared_ptr<SceneGraph>& sg){ scene = sg; }
+      |          ^~~~~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h:27:10: note: previous declaration ‘void GLRenderer::setSceneGraph(const std::shared_ptr<SceneGraph>&)’
+   27 |     void setSceneGraph(const std::shared_ptr<SceneGraph>& sg){ scene = sg; }
+      |          ^~~~~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h:53:17: error: ‘std::string GLRenderer::pickNodeAtScreen(int, int, int, int)’ cannot be overloaded with ‘std::string GLRenderer::pickNodeAtScreen(int, int, int, int)’
+   53 |     std::string pickNodeAtScreen(int sx, int sy, int winW, int winH);
+      |                 ^~~~~~~~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h:28:17: note: previous declaration ‘std::string GLRenderer::pickNodeAtScreen(int, int, int, int)’
+   28 |     std::string pickNodeAtScreen(int sx, int sy, int winW, int winH);
+      |                 ^~~~~~~~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h:54:10: error: ‘void GLRenderer::pinNodeById(const std::string&)’ cannot be overloaded with ‘void GLRenderer::pinNodeById(const std::string&)’
+   54 |     void pinNodeById(const std::string &id);
+      |          ^~~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h:29:10: note: previous declaration ‘void GLRenderer::pinNodeById(const std::string&)’
+   29 |     void pinNodeById(const std::string &id);
+      |          ^~~~~~~~~~~
+gmake[3]: *** [CMakeFiles/blacknode.dir/build.make:205: CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o] Error 1
+gmake[3]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+gmake[2]: *** [CMakeFiles/Makefile2:457: CMakeFiles/blacknode.dir/all] Error 2
+gmake[2]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+gmake[1]: *** [CMakeFiles/Makefile2:491: CMakeFiles/blacknode_app.dir/rule] Error 2
+gmake[1]: Leaving directory '/home/pc/Avant-Garde/Avant-Garde-1/build'
+gmake: *** [Makefile:185: blacknode_app] Error 2
+

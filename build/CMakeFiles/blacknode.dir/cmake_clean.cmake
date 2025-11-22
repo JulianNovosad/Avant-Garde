@@ -1,0 +1,39 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/blacknode.dir/src/NetworkManager.cpp.o"
+  "CMakeFiles/blacknode.dir/src/NetworkManager.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/core/EventBus.cpp.o"
+  "CMakeFiles/blacknode.dir/src/core/EventBus.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/core/Logger.cpp.o"
+  "CMakeFiles/blacknode.dir/src/core/Logger.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/core/NativeBridge.cpp.o"
+  "CMakeFiles/blacknode.dir/src/core/NativeBridge.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/core/StateMachine.cpp.o"
+  "CMakeFiles/blacknode.dir/src/core/StateMachine.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/net/BackpressureDetector.cpp.o"
+  "CMakeFiles/blacknode.dir/src/net/BackpressureDetector.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o"
+  "CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o"
+  "CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o"
+  "CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o"
+  "CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o"
+  "CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o"
+  "CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o"
+  "CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o"
+  "CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o"
+  "CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o.d"
+  "libblacknode.pdb"
+  "libblacknode.so"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/blacknode.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

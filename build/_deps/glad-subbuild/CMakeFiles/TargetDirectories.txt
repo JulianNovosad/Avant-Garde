@@ -1,0 +1,3 @@
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-subbuild/CMakeFiles/glad-populate.dir
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-subbuild/CMakeFiles/edit_cache.dir
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-subbuild/CMakeFiles/rebuild_cache.dir
