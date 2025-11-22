@@ -15,13 +15,15 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(raylib)
 
-# libjpeg-turbo (master)
-FetchContent_Declare(
-  libjpeg_turbo
-  GIT_REPOSITORY https://github.com/libjpeg-turbo/libjpeg-turbo.git
-  GIT_TAG master
-)
-FetchContent_MakeAvailable(libjpeg_turbo)
+# libjpeg-turbo (only for Android builds - desktop uses placeholder)
+if(ANDROID)
+  FetchContent_Declare(
+    libjpeg_turbo
+    GIT_REPOSITORY https://github.com/libjpeg-turbo/libjpeg-turbo.git
+    GIT_TAG main
+  )
+  FetchContent_MakeAvailable(libjpeg_turbo)
+endif()
 
 # rapidjson
 FetchContent_Declare(
@@ -40,37 +42,39 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glm)
 
 if(NOT ANDROID)
-  message(FATAL_ERROR "This CMakeLists is intended for Android NDK builds. Use -DANDROID=ON or build via ndk-build/cmake from Android Studio.")
+  message(STATUS "Configuring for desktop build (libjpeg-turbo will be skipped).")
 endif()
 
-add_library(blacknode SHARED
-  src/PacketDefs.h
-  src/Network/UdpReceiver.cpp
-  src/Video/Decoder.cpp
-  src/Render/Scene.cpp
-  src/main.cpp
-)
+if(ANDROID)
+  add_library(blacknode SHARED
+    src/PacketDefs.h
+    src/Network/UdpReceiver.cpp
+    src/Video/Decoder.cpp
+    src/Render/Scene.cpp
+    src/main.cpp
+  )
 
-target_include_directories(blacknode PRIVATE
-  ${CMAKE_CURRENT_SOURCE_DIR}/src
-  ${rapidjson_SOURCE_DIR}/include
-  ${glm_SOURCE_DIR}
-  ${libjpeg_turbo_SOURCE_DIR}/simd
-)
+  target_include_directories(blacknode PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${rapidjson_SOURCE_DIR}/include
+    ${glm_SOURCE_DIR}
+    ${libjpeg_turbo_SOURCE_DIR}/simd
+  )
 
-target_link_libraries(blacknode PRIVATE
-  raylib
-  jpegturbo-static
-  android
-  log
-  GLESv3
-)
+  target_link_libraries(blacknode PRIVATE
+    raylib
+    jpegturbo-static
+    android
+    log
+    GLESv3
+  )
 
-set_target_properties(blacknode PROPERTIES
-  OUTPUT_NAME "blacknode"
-)
+  set_target_properties(blacknode PROPERTIES
+    OUTPUT_NAME "blacknode"
+  )
 
-install(TARGETS blacknode DESTINATION lib)
+  install(TARGETS blacknode DESTINATION lib)
+endif()
 cmake_minimum_required(VERSION 3.18)
 project(Blacknode1 LANGUAGES C CXX)
 
@@ -136,24 +140,28 @@ FetchContent_MakeAvailable(glm)
 include_directories(${glm_SOURCE_DIR})
 target_include_directories(blacknode PRIVATE ${glm_SOURCE_DIR})
 
-# GLFW + glad for desktop GL context
-FetchContent_Declare(
-  glfw
-  GIT_REPOSITORY https://github.com/glfw/glfw.git
-  GIT_TAG        3.3.8
-)
-FetchContent_MakeAvailable(glfw)
+# GLFW + glad for desktop GL context (only if not already provided by raylib)
+if(NOT TARGET glfw)
+  FetchContent_Declare(
+    glfw
+    GIT_REPOSITORY https://github.com/glfw/glfw.git
+    GIT_TAG        3.3.8
+  )
+  FetchContent_MakeAvailable(glfw)
+endif()
 
-FetchContent_Declare(
-  glad
-  GIT_REPOSITORY https://github.com/Dav1dde/glad.git
-  GIT_TAG        v0.1.36
-)
-FetchContent_MakeAvailable(glad)
-## Use the `glad` target provided by the glad FetchContent project.
-## The glad project generates its sources at configure time; link against the
-## `glad` target instead of referencing generated files directly.
-target_link_libraries(blacknode PRIVATE glad)
+if(NOT TARGET glad)
+  FetchContent_Declare(
+    glad
+    GIT_REPOSITORY https://github.com/Dav1dde/glad.git
+    GIT_TAG        v0.1.36
+  )
+  FetchContent_MakeAvailable(glad)
+  ## Use the `glad` target provided by the glad FetchContent project.
+  ## The glad project generates its sources at configure time; link against the
+  ## `glad` target instead of referencing generated files directly.
+  target_link_libraries(blacknode PRIVATE glad)
+endif()
 
 
 if(ANDROID)
@@ -177,7 +185,7 @@ if(ANDROID)
 else()
   find_package(OpenGL REQUIRED)
   find_package(OpenSSL REQUIRED)
-  target_link_libraries(blacknode PRIVATE OpenGL::GL dl pthread OpenSSL::SSL OpenSSL::Crypto)
+  target_link_libraries(blacknode PRIVATE OpenGL::GL dl pthread OpenSSL::SSL OpenSSL::Crypto raylib)
   # Desktop executable for testing (only when not building for Android)
   add_executable(blacknode_app ${CORE_DIR}/main_app.cpp)
   target_include_directories(blacknode_app PRIVATE ${CORE_DIR})

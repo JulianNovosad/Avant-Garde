@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.o"
+  "CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.o.d"
   "CMakeFiles/blacknode.dir/src/NetworkManager.cpp.o"
   "CMakeFiles/blacknode.dir/src/NetworkManager.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/Render/Scene.cpp.o"
+  "CMakeFiles/blacknode.dir/src/Render/Scene.cpp.o.d"
+  "CMakeFiles/blacknode.dir/src/Video/Decoder.cpp.o"
+  "CMakeFiles/blacknode.dir/src/Video/Decoder.cpp.o.d"
   "CMakeFiles/blacknode.dir/src/core/EventBus.cpp.o"
   "CMakeFiles/blacknode.dir/src/core/EventBus.cpp.o.d"
   "CMakeFiles/blacknode.dir/src/core/Logger.cpp.o"

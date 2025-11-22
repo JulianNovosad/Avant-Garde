@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/include -I/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/thirdparty/gtest/googletest/include -I/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/thirdparty/gtest/googletest
 
-CXX_FLAGS =  -march=native -Wall -Wextra -Werror -O3 -DNDEBUG -std=gnu++11 -fPIC  -march=native -Wall -Wextra -Werror -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Wextra -Wno-unused-parameter
+CXX_FLAGS =  -march=native -Wall -Wextra -Werror -O3 -DNDEBUG -std=gnu++11 -fPIC  -march=native -Wall -Wextra -Werror -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
 

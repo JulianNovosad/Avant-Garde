@@ -8,7 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp" "CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.o" "gcc" "CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.o.d"
   "/home/pc/Avant-Garde/Avant-Garde-1/src/NetworkManager.cpp" "CMakeFiles/blacknode.dir/src/NetworkManager.cpp.o" "gcc" "CMakeFiles/blacknode.dir/src/NetworkManager.cpp.o.d"
+  "/home/pc/Avant-Garde/Avant-Garde-1/src/Render/Scene.cpp" "CMakeFiles/blacknode.dir/src/Render/Scene.cpp.o" "gcc" "CMakeFiles/blacknode.dir/src/Render/Scene.cpp.o.d"
+  "/home/pc/Avant-Garde/Avant-Garde-1/src/Video/Decoder.cpp" "CMakeFiles/blacknode.dir/src/Video/Decoder.cpp.o" "gcc" "CMakeFiles/blacknode.dir/src/Video/Decoder.cpp.o.d"
   "/home/pc/Avant-Garde/Avant-Garde-1/src/core/EventBus.cpp" "CMakeFiles/blacknode.dir/src/core/EventBus.cpp.o" "gcc" "CMakeFiles/blacknode.dir/src/core/EventBus.cpp.o.d"
   "/home/pc/Avant-Garde/Avant-Garde-1/src/core/Logger.cpp" "CMakeFiles/blacknode.dir/src/core/Logger.cpp.o" "gcc" "CMakeFiles/blacknode.dir/src/core/Logger.cpp.o.d"
   "/home/pc/Avant-Garde/Avant-Garde-1/src/core/NativeBridge.cpp" "CMakeFiles/blacknode.dir/src/core/NativeBridge.cpp.o" "gcc" "CMakeFiles/blacknode.dir/src/core/NativeBridge.cpp.o.d"

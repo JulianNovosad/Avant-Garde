@@ -384,7 +384,7 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: \
  /usr/include/c++/13/bits/istream.tcc \
  /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-build/include/glad/glad.h \
  /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-build/include/KHR/khrplatform.h \
- /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glfw-src/include/GLFW/glfw3.h \
+ /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-src/src/external/glfw/include/GLFW/glfw3.h \
  /home/pc/Avant-Garde/Avant-Garde-1/src/net/BackpressureDetector.h \
  /home/pc/Avant-Garde/Avant-Garde-1/src/net/TCPClient.h \
  /home/pc/Avant-Garde/Avant-Garde-1/src/net/WebSocketClient.h \

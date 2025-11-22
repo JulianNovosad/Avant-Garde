@@ -28,9 +28,6 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -68,25 +65,25 @@ CMAKE_BINARY_DIR = /home/pc/Avant-Garde/Avant-Garde-1/build
 # The main recursive "all" target.
 all: CMakeFiles/blacknode.dir/all
 all: CMakeFiles/blacknode_app.dir/all
+all: _deps/raylib-build/all
 all: _deps/rapidjson-build/all
 all: _deps/glm-build/all
-all: _deps/glfw-build/all
 all: _deps/glad-build/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
+preinstall: _deps/raylib-build/preinstall
 preinstall: _deps/rapidjson-build/preinstall
 preinstall: _deps/glm-build/preinstall
-preinstall: _deps/glfw-build/preinstall
 preinstall: _deps/glad-build/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/blacknode.dir/clean
 clean: CMakeFiles/blacknode_app.dir/clean
+clean: _deps/raylib-build/clean
 clean: _deps/rapidjson-build/clean
 clean: _deps/glm-build/clean
-clean: _deps/glfw-build/clean
 clean: _deps/glad-build/clean
 .PHONY : clean
 
@@ -105,128 +102,6 @@ _deps/glad-build/preinstall:
 _deps/glad-build/clean: _deps/glad-build/CMakeFiles/glad-generate-files.dir/clean
 _deps/glad-build/clean: _deps/glad-build/CMakeFiles/glad.dir/clean
 .PHONY : _deps/glad-build/clean
-
-#=============================================================================
-# Directory level rules for directory _deps/glfw-build
-
-# Recursive "all" directory target.
-_deps/glfw-build/all: _deps/glfw-build/src/all
-_deps/glfw-build/all: _deps/glfw-build/examples/all
-_deps/glfw-build/all: _deps/glfw-build/tests/all
-.PHONY : _deps/glfw-build/all
-
-# Recursive "preinstall" directory target.
-_deps/glfw-build/preinstall: _deps/glfw-build/src/preinstall
-_deps/glfw-build/preinstall: _deps/glfw-build/examples/preinstall
-_deps/glfw-build/preinstall: _deps/glfw-build/tests/preinstall
-.PHONY : _deps/glfw-build/preinstall
-
-# Recursive "clean" directory target.
-_deps/glfw-build/clean: _deps/glfw-build/CMakeFiles/uninstall.dir/clean
-_deps/glfw-build/clean: _deps/glfw-build/src/clean
-_deps/glfw-build/clean: _deps/glfw-build/examples/clean
-_deps/glfw-build/clean: _deps/glfw-build/tests/clean
-.PHONY : _deps/glfw-build/clean
-
-#=============================================================================
-# Directory level rules for directory _deps/glfw-build/examples
-
-# Recursive "all" directory target.
-_deps/glfw-build/examples/all: _deps/glfw-build/examples/CMakeFiles/boing.dir/all
-_deps/glfw-build/examples/all: _deps/glfw-build/examples/CMakeFiles/gears.dir/all
-_deps/glfw-build/examples/all: _deps/glfw-build/examples/CMakeFiles/heightmap.dir/all
-_deps/glfw-build/examples/all: _deps/glfw-build/examples/CMakeFiles/offscreen.dir/all
-_deps/glfw-build/examples/all: _deps/glfw-build/examples/CMakeFiles/particles.dir/all
-_deps/glfw-build/examples/all: _deps/glfw-build/examples/CMakeFiles/sharing.dir/all
-_deps/glfw-build/examples/all: _deps/glfw-build/examples/CMakeFiles/simple.dir/all
-_deps/glfw-build/examples/all: _deps/glfw-build/examples/CMakeFiles/splitview.dir/all
-_deps/glfw-build/examples/all: _deps/glfw-build/examples/CMakeFiles/wave.dir/all
-.PHONY : _deps/glfw-build/examples/all
-
-# Recursive "preinstall" directory target.
-_deps/glfw-build/examples/preinstall:
-.PHONY : _deps/glfw-build/examples/preinstall
-
-# Recursive "clean" directory target.
-_deps/glfw-build/examples/clean: _deps/glfw-build/examples/CMakeFiles/boing.dir/clean
-_deps/glfw-build/examples/clean: _deps/glfw-build/examples/CMakeFiles/gears.dir/clean
-_deps/glfw-build/examples/clean: _deps/glfw-build/examples/CMakeFiles/heightmap.dir/clean
-_deps/glfw-build/examples/clean: _deps/glfw-build/examples/CMakeFiles/offscreen.dir/clean
-_deps/glfw-build/examples/clean: _deps/glfw-build/examples/CMakeFiles/particles.dir/clean
-_deps/glfw-build/examples/clean: _deps/glfw-build/examples/CMakeFiles/sharing.dir/clean
-_deps/glfw-build/examples/clean: _deps/glfw-build/examples/CMakeFiles/simple.dir/clean
-_deps/glfw-build/examples/clean: _deps/glfw-build/examples/CMakeFiles/splitview.dir/clean
-_deps/glfw-build/examples/clean: _deps/glfw-build/examples/CMakeFiles/wave.dir/clean
-.PHONY : _deps/glfw-build/examples/clean
-
-#=============================================================================
-# Directory level rules for directory _deps/glfw-build/src
-
-# Recursive "all" directory target.
-_deps/glfw-build/src/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-.PHONY : _deps/glfw-build/src/all
-
-# Recursive "preinstall" directory target.
-_deps/glfw-build/src/preinstall:
-.PHONY : _deps/glfw-build/src/preinstall
-
-# Recursive "clean" directory target.
-_deps/glfw-build/src/clean: _deps/glfw-build/src/CMakeFiles/update_mappings.dir/clean
-_deps/glfw-build/src/clean: _deps/glfw-build/src/CMakeFiles/glfw.dir/clean
-.PHONY : _deps/glfw-build/src/clean
-
-#=============================================================================
-# Directory level rules for directory _deps/glfw-build/tests
-
-# Recursive "all" directory target.
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/clipboard.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/events.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/msaa.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/iconify.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/monitors.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/reopen.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/cursor.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/empty.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/gamma.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/icon.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/inputlag.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/joysticks.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/opacity.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/tearing.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/threads.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/timeout.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/title.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/all
-_deps/glfw-build/tests/all: _deps/glfw-build/tests/CMakeFiles/windows.dir/all
-.PHONY : _deps/glfw-build/tests/all
-
-# Recursive "preinstall" directory target.
-_deps/glfw-build/tests/preinstall:
-.PHONY : _deps/glfw-build/tests/preinstall
-
-# Recursive "clean" directory target.
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/clipboard.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/events.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/msaa.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/iconify.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/monitors.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/reopen.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/cursor.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/empty.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/gamma.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/icon.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/inputlag.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/joysticks.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/opacity.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/tearing.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/threads.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/timeout.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/title.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/clean
-_deps/glfw-build/tests/clean: _deps/glfw-build/tests/CMakeFiles/windows.dir/clean
-.PHONY : _deps/glfw-build/tests/clean
 
 #=============================================================================
 # Directory level rules for directory _deps/glm-build
@@ -432,6 +307,69 @@ _deps/rapidjson-build/test/unittest/clean: _deps/rapidjson-build/test/unittest/C
 .PHONY : _deps/rapidjson-build/test/unittest/clean
 
 #=============================================================================
+# Directory level rules for directory _deps/raylib-build
+
+# Recursive "all" directory target.
+_deps/raylib-build/all: _deps/raylib-build/raylib/all
+.PHONY : _deps/raylib-build/all
+
+# Recursive "preinstall" directory target.
+_deps/raylib-build/preinstall: _deps/raylib-build/raylib/preinstall
+.PHONY : _deps/raylib-build/preinstall
+
+# Recursive "clean" directory target.
+_deps/raylib-build/clean: _deps/raylib-build/raylib/clean
+.PHONY : _deps/raylib-build/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/raylib-build/raylib
+
+# Recursive "all" directory target.
+_deps/raylib-build/raylib/all: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
+_deps/raylib-build/raylib/all: _deps/raylib-build/raylib/external/glfw/all
+.PHONY : _deps/raylib-build/raylib/all
+
+# Recursive "preinstall" directory target.
+_deps/raylib-build/raylib/preinstall: _deps/raylib-build/raylib/external/glfw/preinstall
+.PHONY : _deps/raylib-build/raylib/preinstall
+
+# Recursive "clean" directory target.
+_deps/raylib-build/raylib/clean: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/clean
+_deps/raylib-build/raylib/clean: _deps/raylib-build/raylib/external/glfw/clean
+.PHONY : _deps/raylib-build/raylib/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/raylib-build/raylib/external/glfw
+
+# Recursive "all" directory target.
+_deps/raylib-build/raylib/external/glfw/all: _deps/raylib-build/raylib/external/glfw/src/all
+.PHONY : _deps/raylib-build/raylib/external/glfw/all
+
+# Recursive "preinstall" directory target.
+_deps/raylib-build/raylib/external/glfw/preinstall: _deps/raylib-build/raylib/external/glfw/src/preinstall
+.PHONY : _deps/raylib-build/raylib/external/glfw/preinstall
+
+# Recursive "clean" directory target.
+_deps/raylib-build/raylib/external/glfw/clean: _deps/raylib-build/raylib/external/glfw/src/clean
+.PHONY : _deps/raylib-build/raylib/external/glfw/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/raylib-build/raylib/external/glfw/src
+
+# Recursive "all" directory target.
+_deps/raylib-build/raylib/external/glfw/src/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
+.PHONY : _deps/raylib-build/raylib/external/glfw/src/all
+
+# Recursive "preinstall" directory target.
+_deps/raylib-build/raylib/external/glfw/src/preinstall:
+.PHONY : _deps/raylib-build/raylib/external/glfw/src/preinstall
+
+# Recursive "clean" directory target.
+_deps/raylib-build/raylib/external/glfw/src/clean: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean
+_deps/raylib-build/raylib/external/glfw/src/clean: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean
+.PHONY : _deps/raylib-build/raylib/external/glfw/src/clean
+
+#=============================================================================
 # Directory level rules for directory googletest
 
 # Recursive "all" directory target.
@@ -452,15 +390,17 @@ googletest/clean: googletest/CMakeFiles/gtest_main.dir/clean
 # Target rules for target CMakeFiles/blacknode.dir
 
 # All Build rule for target.
+CMakeFiles/blacknode.dir/all: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
+CMakeFiles/blacknode.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 CMakeFiles/blacknode.dir/all: _deps/glad-build/CMakeFiles/glad.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=2,3,4,5,6,7,8 "Built target blacknode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target blacknode"
 .PHONY : CMakeFiles/blacknode.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/blacknode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 37
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/blacknode.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : CMakeFiles/blacknode.dir/rule
@@ -479,16 +419,16 @@ CMakeFiles/blacknode.dir/clean:
 
 # All Build rule for target.
 CMakeFiles/blacknode_app.dir/all: CMakeFiles/blacknode.dir/all
-CMakeFiles/blacknode_app.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
+CMakeFiles/blacknode_app.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 CMakeFiles/blacknode_app.dir/all: _deps/glad-build/CMakeFiles/glad.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode_app.dir/build.make CMakeFiles/blacknode_app.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode_app.dir/build.make CMakeFiles/blacknode_app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=9 "Built target blacknode_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=16,17 "Built target blacknode_app"
 .PHONY : CMakeFiles/blacknode_app.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/blacknode_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 39
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/blacknode_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : CMakeFiles/blacknode_app.dir/rule
@@ -501,6 +441,84 @@ blacknode_app: CMakeFiles/blacknode_app.dir/rule
 CMakeFiles/blacknode_app.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode_app.dir/build.make CMakeFiles/blacknode_app.dir/clean
 .PHONY : CMakeFiles/blacknode_app.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+# All Build rule for target.
+_deps/raylib-build/raylib/CMakeFiles/raylib.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=61,62,63,64,65 "Built target raylib"
+.PHONY : _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 21
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
+.PHONY : _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rule
+
+# Convenience name for target.
+raylib: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rule
+.PHONY : raylib
+
+# clean rule for target.
+_deps/raylib-build/raylib/CMakeFiles/raylib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/clean
+.PHONY : _deps/raylib-build/raylib/CMakeFiles/raylib.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+# All Build rule for target.
+_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all:
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Built target glfw"
+.PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 16
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
+.PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/rule
+
+# Convenience name for target.
+glfw: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/rule
+.PHONY : glfw
+
+# clean rule for target.
+_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean
+.PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir
+
+# All Build rule for target.
+_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all:
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=100 "Built target update_mappings"
+.PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
+.PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/rule
+
+# Convenience name for target.
+update_mappings: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/rule
+.PHONY : update_mappings
+
+# clean rule for target.
+_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean
+.PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 #=============================================================================
 # Target rules for target _deps/rapidjson-build/CMakeFiles/travis_doc.dir
@@ -1263,12 +1281,12 @@ _deps/rapidjson-build/CMakeFiles/ContinuousSubmit.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/build.make _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/build.make _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=1 "Built target archivertest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=1,2 "Built target archivertest"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/rule
@@ -1289,7 +1307,7 @@ _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/capitalize.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/capitalize.dir/build.make _deps/rapidjson-build/example/CMakeFiles/capitalize.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/capitalize.dir/build.make _deps/rapidjson-build/example/CMakeFiles/capitalize.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=11 "Built target capitalize"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=18 "Built target capitalize"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/capitalize.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1315,12 +1333,12 @@ _deps/rapidjson-build/example/CMakeFiles/capitalize.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/condense.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/condense.dir/build.make _deps/rapidjson-build/example/CMakeFiles/condense.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/condense.dir/build.make _deps/rapidjson-build/example/CMakeFiles/condense.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=14 "Built target condense"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=19,20 "Built target condense"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/condense.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/condense.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/condense.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/condense.dir/rule
@@ -1341,7 +1359,7 @@ _deps/rapidjson-build/example/CMakeFiles/condense.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/filterkey.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/filterkey.dir/build.make _deps/rapidjson-build/example/CMakeFiles/filterkey.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/filterkey.dir/build.make _deps/rapidjson-build/example/CMakeFiles/filterkey.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=20 "Built target filterkey"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=21 "Built target filterkey"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/filterkey.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1367,12 +1385,12 @@ _deps/rapidjson-build/example/CMakeFiles/filterkey.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/build.make _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/build.make _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=21 "Built target filterkeydom"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=22,23 "Built target filterkeydom"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/rule
@@ -1393,12 +1411,12 @@ _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/build.make _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/build.make _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=46 "Built target jsonx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=46,47 "Built target jsonx"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/rule
@@ -1419,7 +1437,7 @@ _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/lookaheadparser.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/lookaheadparser.dir/build.make _deps/rapidjson-build/example/CMakeFiles/lookaheadparser.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/lookaheadparser.dir/build.make _deps/rapidjson-build/example/CMakeFiles/lookaheadparser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=47 "Built target lookaheadparser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=48 "Built target lookaheadparser"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/lookaheadparser.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1445,12 +1463,12 @@ _deps/rapidjson-build/example/CMakeFiles/lookaheadparser.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/build.make _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/build.make _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num= "Built target messagereader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=49,50 "Built target messagereader"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/rule
@@ -1471,7 +1489,7 @@ _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/parsebyparts.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/parsebyparts.dir/build.make _deps/rapidjson-build/example/CMakeFiles/parsebyparts.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/parsebyparts.dir/build.make _deps/rapidjson-build/example/CMakeFiles/parsebyparts.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=56 "Built target parsebyparts"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=52 "Built target parsebyparts"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/parsebyparts.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1497,12 +1515,12 @@ _deps/rapidjson-build/example/CMakeFiles/parsebyparts.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/pretty.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/pretty.dir/build.make _deps/rapidjson-build/example/CMakeFiles/pretty.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/pretty.dir/build.make _deps/rapidjson-build/example/CMakeFiles/pretty.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num= "Built target pretty"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=58 "Built target pretty"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/pretty.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/pretty.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/pretty.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/pretty.dir/rule
@@ -1523,12 +1541,12 @@ _deps/rapidjson-build/example/CMakeFiles/pretty.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/build.make _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/build.make _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=62 "Built target prettyauto"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=59,60 "Built target prettyauto"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/rule
@@ -1549,12 +1567,12 @@ _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/build.make _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/build.make _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=65 "Built target schemavalidator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=66,67 "Built target schemavalidator"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/rule
@@ -1575,7 +1593,7 @@ _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/serialize.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/serialize.dir/build.make _deps/rapidjson-build/example/CMakeFiles/serialize.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/serialize.dir/build.make _deps/rapidjson-build/example/CMakeFiles/serialize.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=66 "Built target serialize"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=68 "Built target serialize"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/serialize.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1601,12 +1619,12 @@ _deps/rapidjson-build/example/CMakeFiles/serialize.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=69 "Built target simpledom"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=69,70 "Built target simpledom"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/rule
@@ -1627,12 +1645,12 @@ _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=71 "Built target simplereader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=72,73 "Built target simplereader"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/rule
@@ -1653,7 +1671,7 @@ _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/simplepullreader.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simplepullreader.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simplepullreader.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simplepullreader.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simplepullreader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=70 "Built target simplepullreader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=71 "Built target simplepullreader"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/simplepullreader.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1679,7 +1697,7 @@ _deps/rapidjson-build/example/CMakeFiles/simplepullreader.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/simplewriter.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simplewriter.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simplewriter.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simplewriter.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simplewriter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=72 "Built target simplewriter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=74 "Built target simplewriter"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/simplewriter.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1705,12 +1723,12 @@ _deps/rapidjson-build/example/CMakeFiles/simplewriter.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/build.make _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/build.make _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=73 "Built target sortkeys"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=75,76 "Built target sortkeys"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/rule
@@ -1731,7 +1749,7 @@ _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/clean:
 _deps/rapidjson-build/example/CMakeFiles/tutorial.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/tutorial.dir/build.make _deps/rapidjson-build/example/CMakeFiles/tutorial.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/tutorial.dir/build.make _deps/rapidjson-build/example/CMakeFiles/tutorial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=82 "Built target tutorial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=77 "Built target tutorial"
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/tutorial.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1779,7 +1797,7 @@ _deps/rapidjson-build/example/CMakeFiles/examples.dir/all: _deps/rapidjson-build
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/example/CMakeFiles/examples.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/example/CMakeFiles/examples.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/example/CMakeFiles/examples.dir/rule
@@ -1806,7 +1824,7 @@ _deps/rapidjson-build/test/CMakeFiles/tests.dir/all: _deps/rapidjson-build/test/
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/test/CMakeFiles/tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/test/CMakeFiles/tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/test/CMakeFiles/tests.dir/rule
@@ -1827,12 +1845,12 @@ _deps/rapidjson-build/test/CMakeFiles/tests.dir/clean:
 googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=36 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=43,44 "Built target gtest"
 .PHONY : googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/CMakeFiles/gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/gtest.dir/rule
@@ -1853,12 +1871,12 @@ googletest/CMakeFiles/gtest.dir/clean:
 googletest/CMakeFiles/gtest_main.dir/all: googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=37 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=45 "Built target gtest_main"
 .PHONY : googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/CMakeFiles/gtest_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/gtest_main.dir/rule
@@ -1880,12 +1898,12 @@ _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/all: googletest/CMak
 _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/build.make _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/build.make _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=59,60,61 "Built target perftest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=53,54,55,56,57 "Built target perftest"
 .PHONY : _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/rule
@@ -1906,7 +1924,7 @@ _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/clean:
 _deps/rapidjson-build/test/unittest/CMakeFiles/namespacetest.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/unittest/CMakeFiles/namespacetest.dir/build.make _deps/rapidjson-build/test/unittest/CMakeFiles/namespacetest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/unittest/CMakeFiles/namespacetest.dir/build.make _deps/rapidjson-build/test/unittest/CMakeFiles/namespacetest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=52 "Built target namespacetest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=51 "Built target namespacetest"
 .PHONY : _deps/rapidjson-build/test/unittest/CMakeFiles/namespacetest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1934,12 +1952,12 @@ _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/all: googletest/CMak
 _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/all: _deps/rapidjson-build/test/unittest/CMakeFiles/namespacetest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/build.make _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/build.make _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=83,84,85,86,87,88,89,90,91,92,93,94,95,96 "Built target unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99 "Built target unittest"
 .PHONY : _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/rule
@@ -1954,850 +1972,18 @@ _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/clean:
 .PHONY : _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/clean
 
 #=============================================================================
-# Target rules for target _deps/glfw-build/CMakeFiles/uninstall.dir
-
-# All Build rule for target.
-_deps/glfw-build/CMakeFiles/uninstall.dir/all:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/CMakeFiles/uninstall.dir/build.make _deps/glfw-build/CMakeFiles/uninstall.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/CMakeFiles/uninstall.dir/build.make _deps/glfw-build/CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num= "Built target uninstall"
-.PHONY : _deps/glfw-build/CMakeFiles/uninstall.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/CMakeFiles/uninstall.dir/rule
-
-# Convenience name for target.
-uninstall: _deps/glfw-build/CMakeFiles/uninstall.dir/rule
-.PHONY : uninstall
-
-# clean rule for target.
-_deps/glfw-build/CMakeFiles/uninstall.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/CMakeFiles/uninstall.dir/build.make _deps/glfw-build/CMakeFiles/uninstall.dir/clean
-.PHONY : _deps/glfw-build/CMakeFiles/uninstall.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/src/CMakeFiles/update_mappings.dir
-
-# All Build rule for target.
-_deps/glfw-build/src/CMakeFiles/update_mappings.dir/all:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/src/CMakeFiles/update_mappings.dir/build.make _deps/glfw-build/src/CMakeFiles/update_mappings.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/src/CMakeFiles/update_mappings.dir/build.make _deps/glfw-build/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num= "Built target update_mappings"
-.PHONY : _deps/glfw-build/src/CMakeFiles/update_mappings.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/src/CMakeFiles/update_mappings.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/src/CMakeFiles/update_mappings.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/src/CMakeFiles/update_mappings.dir/rule
-
-# Convenience name for target.
-update_mappings: _deps/glfw-build/src/CMakeFiles/update_mappings.dir/rule
-.PHONY : update_mappings
-
-# clean rule for target.
-_deps/glfw-build/src/CMakeFiles/update_mappings.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/src/CMakeFiles/update_mappings.dir/build.make _deps/glfw-build/src/CMakeFiles/update_mappings.dir/clean
-.PHONY : _deps/glfw-build/src/CMakeFiles/update_mappings.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/src/CMakeFiles/glfw.dir
-
-# All Build rule for target.
-_deps/glfw-build/src/CMakeFiles/glfw.dir/all:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/src/CMakeFiles/glfw.dir/build.make _deps/glfw-build/src/CMakeFiles/glfw.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/src/CMakeFiles/glfw.dir/build.make _deps/glfw-build/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=26,27,28,29,30,31,32,33 "Built target glfw"
-.PHONY : _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/src/CMakeFiles/glfw.dir/rule
-
-# Convenience name for target.
-glfw: _deps/glfw-build/src/CMakeFiles/glfw.dir/rule
-.PHONY : glfw
-
-# clean rule for target.
-_deps/glfw-build/src/CMakeFiles/glfw.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/src/CMakeFiles/glfw.dir/build.make _deps/glfw-build/src/CMakeFiles/glfw.dir/clean
-.PHONY : _deps/glfw-build/src/CMakeFiles/glfw.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/examples/CMakeFiles/boing.dir
-
-# All Build rule for target.
-_deps/glfw-build/examples/CMakeFiles/boing.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/boing.dir/build.make _deps/glfw-build/examples/CMakeFiles/boing.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/boing.dir/build.make _deps/glfw-build/examples/CMakeFiles/boing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=10 "Built target boing"
-.PHONY : _deps/glfw-build/examples/CMakeFiles/boing.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/examples/CMakeFiles/boing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/examples/CMakeFiles/boing.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/examples/CMakeFiles/boing.dir/rule
-
-# Convenience name for target.
-boing: _deps/glfw-build/examples/CMakeFiles/boing.dir/rule
-.PHONY : boing
-
-# clean rule for target.
-_deps/glfw-build/examples/CMakeFiles/boing.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/boing.dir/build.make _deps/glfw-build/examples/CMakeFiles/boing.dir/clean
-.PHONY : _deps/glfw-build/examples/CMakeFiles/boing.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/examples/CMakeFiles/gears.dir
-
-# All Build rule for target.
-_deps/glfw-build/examples/CMakeFiles/gears.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/gears.dir/build.make _deps/glfw-build/examples/CMakeFiles/gears.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/gears.dir/build.make _deps/glfw-build/examples/CMakeFiles/gears.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=23 "Built target gears"
-.PHONY : _deps/glfw-build/examples/CMakeFiles/gears.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/examples/CMakeFiles/gears.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/examples/CMakeFiles/gears.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/examples/CMakeFiles/gears.dir/rule
-
-# Convenience name for target.
-gears: _deps/glfw-build/examples/CMakeFiles/gears.dir/rule
-.PHONY : gears
-
-# clean rule for target.
-_deps/glfw-build/examples/CMakeFiles/gears.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/gears.dir/build.make _deps/glfw-build/examples/CMakeFiles/gears.dir/clean
-.PHONY : _deps/glfw-build/examples/CMakeFiles/gears.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/examples/CMakeFiles/heightmap.dir
-
-# All Build rule for target.
-_deps/glfw-build/examples/CMakeFiles/heightmap.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/heightmap.dir/build.make _deps/glfw-build/examples/CMakeFiles/heightmap.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/heightmap.dir/build.make _deps/glfw-build/examples/CMakeFiles/heightmap.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=38 "Built target heightmap"
-.PHONY : _deps/glfw-build/examples/CMakeFiles/heightmap.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/examples/CMakeFiles/heightmap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/examples/CMakeFiles/heightmap.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/examples/CMakeFiles/heightmap.dir/rule
-
-# Convenience name for target.
-heightmap: _deps/glfw-build/examples/CMakeFiles/heightmap.dir/rule
-.PHONY : heightmap
-
-# clean rule for target.
-_deps/glfw-build/examples/CMakeFiles/heightmap.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/heightmap.dir/build.make _deps/glfw-build/examples/CMakeFiles/heightmap.dir/clean
-.PHONY : _deps/glfw-build/examples/CMakeFiles/heightmap.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/examples/CMakeFiles/offscreen.dir
-
-# All Build rule for target.
-_deps/glfw-build/examples/CMakeFiles/offscreen.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/offscreen.dir/build.make _deps/glfw-build/examples/CMakeFiles/offscreen.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/offscreen.dir/build.make _deps/glfw-build/examples/CMakeFiles/offscreen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=53 "Built target offscreen"
-.PHONY : _deps/glfw-build/examples/CMakeFiles/offscreen.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/examples/CMakeFiles/offscreen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/examples/CMakeFiles/offscreen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/examples/CMakeFiles/offscreen.dir/rule
-
-# Convenience name for target.
-offscreen: _deps/glfw-build/examples/CMakeFiles/offscreen.dir/rule
-.PHONY : offscreen
-
-# clean rule for target.
-_deps/glfw-build/examples/CMakeFiles/offscreen.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/offscreen.dir/build.make _deps/glfw-build/examples/CMakeFiles/offscreen.dir/clean
-.PHONY : _deps/glfw-build/examples/CMakeFiles/offscreen.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/examples/CMakeFiles/particles.dir
-
-# All Build rule for target.
-_deps/glfw-build/examples/CMakeFiles/particles.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/particles.dir/build.make _deps/glfw-build/examples/CMakeFiles/particles.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/particles.dir/build.make _deps/glfw-build/examples/CMakeFiles/particles.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=57,58 "Built target particles"
-.PHONY : _deps/glfw-build/examples/CMakeFiles/particles.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/examples/CMakeFiles/particles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/examples/CMakeFiles/particles.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/examples/CMakeFiles/particles.dir/rule
-
-# Convenience name for target.
-particles: _deps/glfw-build/examples/CMakeFiles/particles.dir/rule
-.PHONY : particles
-
-# clean rule for target.
-_deps/glfw-build/examples/CMakeFiles/particles.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/particles.dir/build.make _deps/glfw-build/examples/CMakeFiles/particles.dir/clean
-.PHONY : _deps/glfw-build/examples/CMakeFiles/particles.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/examples/CMakeFiles/sharing.dir
-
-# All Build rule for target.
-_deps/glfw-build/examples/CMakeFiles/sharing.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/sharing.dir/build.make _deps/glfw-build/examples/CMakeFiles/sharing.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/sharing.dir/build.make _deps/glfw-build/examples/CMakeFiles/sharing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=67 "Built target sharing"
-.PHONY : _deps/glfw-build/examples/CMakeFiles/sharing.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/examples/CMakeFiles/sharing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/examples/CMakeFiles/sharing.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/examples/CMakeFiles/sharing.dir/rule
-
-# Convenience name for target.
-sharing: _deps/glfw-build/examples/CMakeFiles/sharing.dir/rule
-.PHONY : sharing
-
-# clean rule for target.
-_deps/glfw-build/examples/CMakeFiles/sharing.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/sharing.dir/build.make _deps/glfw-build/examples/CMakeFiles/sharing.dir/clean
-.PHONY : _deps/glfw-build/examples/CMakeFiles/sharing.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/examples/CMakeFiles/simple.dir
-
-# All Build rule for target.
-_deps/glfw-build/examples/CMakeFiles/simple.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/simple.dir/build.make _deps/glfw-build/examples/CMakeFiles/simple.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/simple.dir/build.make _deps/glfw-build/examples/CMakeFiles/simple.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=68 "Built target simple"
-.PHONY : _deps/glfw-build/examples/CMakeFiles/simple.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/examples/CMakeFiles/simple.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/examples/CMakeFiles/simple.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/examples/CMakeFiles/simple.dir/rule
-
-# Convenience name for target.
-simple: _deps/glfw-build/examples/CMakeFiles/simple.dir/rule
-.PHONY : simple
-
-# clean rule for target.
-_deps/glfw-build/examples/CMakeFiles/simple.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/simple.dir/build.make _deps/glfw-build/examples/CMakeFiles/simple.dir/clean
-.PHONY : _deps/glfw-build/examples/CMakeFiles/simple.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/examples/CMakeFiles/splitview.dir
-
-# All Build rule for target.
-_deps/glfw-build/examples/CMakeFiles/splitview.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/splitview.dir/build.make _deps/glfw-build/examples/CMakeFiles/splitview.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/splitview.dir/build.make _deps/glfw-build/examples/CMakeFiles/splitview.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=74 "Built target splitview"
-.PHONY : _deps/glfw-build/examples/CMakeFiles/splitview.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/examples/CMakeFiles/splitview.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/examples/CMakeFiles/splitview.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/examples/CMakeFiles/splitview.dir/rule
-
-# Convenience name for target.
-splitview: _deps/glfw-build/examples/CMakeFiles/splitview.dir/rule
-.PHONY : splitview
-
-# clean rule for target.
-_deps/glfw-build/examples/CMakeFiles/splitview.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/splitview.dir/build.make _deps/glfw-build/examples/CMakeFiles/splitview.dir/clean
-.PHONY : _deps/glfw-build/examples/CMakeFiles/splitview.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/examples/CMakeFiles/wave.dir
-
-# All Build rule for target.
-_deps/glfw-build/examples/CMakeFiles/wave.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/wave.dir/build.make _deps/glfw-build/examples/CMakeFiles/wave.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/wave.dir/build.make _deps/glfw-build/examples/CMakeFiles/wave.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=97,98 "Built target wave"
-.PHONY : _deps/glfw-build/examples/CMakeFiles/wave.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/examples/CMakeFiles/wave.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/examples/CMakeFiles/wave.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/examples/CMakeFiles/wave.dir/rule
-
-# Convenience name for target.
-wave: _deps/glfw-build/examples/CMakeFiles/wave.dir/rule
-.PHONY : wave
-
-# clean rule for target.
-_deps/glfw-build/examples/CMakeFiles/wave.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/wave.dir/build.make _deps/glfw-build/examples/CMakeFiles/wave.dir/clean
-.PHONY : _deps/glfw-build/examples/CMakeFiles/wave.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/clipboard.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/clipboard.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/clipboard.dir/build.make _deps/glfw-build/tests/CMakeFiles/clipboard.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/clipboard.dir/build.make _deps/glfw-build/tests/CMakeFiles/clipboard.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=12,13 "Built target clipboard"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/clipboard.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/clipboard.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/clipboard.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/clipboard.dir/rule
-
-# Convenience name for target.
-clipboard: _deps/glfw-build/tests/CMakeFiles/clipboard.dir/rule
-.PHONY : clipboard
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/clipboard.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/clipboard.dir/build.make _deps/glfw-build/tests/CMakeFiles/clipboard.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/clipboard.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/events.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/events.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/events.dir/build.make _deps/glfw-build/tests/CMakeFiles/events.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/events.dir/build.make _deps/glfw-build/tests/CMakeFiles/events.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=18,19 "Built target events"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/events.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/events.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/events.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/events.dir/rule
-
-# Convenience name for target.
-events: _deps/glfw-build/tests/CMakeFiles/events.dir/rule
-.PHONY : events
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/events.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/events.dir/build.make _deps/glfw-build/tests/CMakeFiles/events.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/events.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/msaa.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/msaa.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/msaa.dir/build.make _deps/glfw-build/tests/CMakeFiles/msaa.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/msaa.dir/build.make _deps/glfw-build/tests/CMakeFiles/msaa.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=50,51 "Built target msaa"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/msaa.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/msaa.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/msaa.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/msaa.dir/rule
-
-# Convenience name for target.
-msaa: _deps/glfw-build/tests/CMakeFiles/msaa.dir/rule
-.PHONY : msaa
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/msaa.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/msaa.dir/build.make _deps/glfw-build/tests/CMakeFiles/msaa.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/msaa.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/build.make _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/build.make _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=34,35 "Built target glfwinfo"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/rule
-
-# Convenience name for target.
-glfwinfo: _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/rule
-.PHONY : glfwinfo
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/build.make _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/iconify.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/iconify.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/iconify.dir/build.make _deps/glfw-build/tests/CMakeFiles/iconify.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/iconify.dir/build.make _deps/glfw-build/tests/CMakeFiles/iconify.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=41,42 "Built target iconify"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/iconify.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/iconify.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/iconify.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/iconify.dir/rule
-
-# Convenience name for target.
-iconify: _deps/glfw-build/tests/CMakeFiles/iconify.dir/rule
-.PHONY : iconify
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/iconify.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/iconify.dir/build.make _deps/glfw-build/tests/CMakeFiles/iconify.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/iconify.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/monitors.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/monitors.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/monitors.dir/build.make _deps/glfw-build/tests/CMakeFiles/monitors.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/monitors.dir/build.make _deps/glfw-build/tests/CMakeFiles/monitors.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=48,49 "Built target monitors"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/monitors.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/monitors.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/monitors.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/monitors.dir/rule
-
-# Convenience name for target.
-monitors: _deps/glfw-build/tests/CMakeFiles/monitors.dir/rule
-.PHONY : monitors
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/monitors.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/monitors.dir/build.make _deps/glfw-build/tests/CMakeFiles/monitors.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/monitors.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/reopen.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/reopen.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/reopen.dir/build.make _deps/glfw-build/tests/CMakeFiles/reopen.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/reopen.dir/build.make _deps/glfw-build/tests/CMakeFiles/reopen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=63,64 "Built target reopen"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/reopen.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/reopen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/reopen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/reopen.dir/rule
-
-# Convenience name for target.
-reopen: _deps/glfw-build/tests/CMakeFiles/reopen.dir/rule
-.PHONY : reopen
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/reopen.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/reopen.dir/build.make _deps/glfw-build/tests/CMakeFiles/reopen.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/reopen.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/cursor.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/cursor.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/cursor.dir/build.make _deps/glfw-build/tests/CMakeFiles/cursor.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/cursor.dir/build.make _deps/glfw-build/tests/CMakeFiles/cursor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=15 "Built target cursor"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/cursor.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/cursor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/cursor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/cursor.dir/rule
-
-# Convenience name for target.
-cursor: _deps/glfw-build/tests/CMakeFiles/cursor.dir/rule
-.PHONY : cursor
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/cursor.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/cursor.dir/build.make _deps/glfw-build/tests/CMakeFiles/cursor.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/cursor.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/empty.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/empty.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/empty.dir/build.make _deps/glfw-build/tests/CMakeFiles/empty.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/empty.dir/build.make _deps/glfw-build/tests/CMakeFiles/empty.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=16,17 "Built target empty"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/empty.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/empty.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/empty.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/empty.dir/rule
-
-# Convenience name for target.
-empty: _deps/glfw-build/tests/CMakeFiles/empty.dir/rule
-.PHONY : empty
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/empty.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/empty.dir/build.make _deps/glfw-build/tests/CMakeFiles/empty.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/empty.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/gamma.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/gamma.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/gamma.dir/build.make _deps/glfw-build/tests/CMakeFiles/gamma.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/gamma.dir/build.make _deps/glfw-build/tests/CMakeFiles/gamma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=22 "Built target gamma"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/gamma.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/gamma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/gamma.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/gamma.dir/rule
-
-# Convenience name for target.
-gamma: _deps/glfw-build/tests/CMakeFiles/gamma.dir/rule
-.PHONY : gamma
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/gamma.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/gamma.dir/build.make _deps/glfw-build/tests/CMakeFiles/gamma.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/gamma.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/icon.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/icon.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/icon.dir/build.make _deps/glfw-build/tests/CMakeFiles/icon.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/icon.dir/build.make _deps/glfw-build/tests/CMakeFiles/icon.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=39,40 "Built target icon"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/icon.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/icon.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/icon.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/icon.dir/rule
-
-# Convenience name for target.
-icon: _deps/glfw-build/tests/CMakeFiles/icon.dir/rule
-.PHONY : icon
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/icon.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/icon.dir/build.make _deps/glfw-build/tests/CMakeFiles/icon.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/icon.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/inputlag.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/inputlag.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/inputlag.dir/build.make _deps/glfw-build/tests/CMakeFiles/inputlag.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/inputlag.dir/build.make _deps/glfw-build/tests/CMakeFiles/inputlag.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=43 "Built target inputlag"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/inputlag.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/inputlag.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/inputlag.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/inputlag.dir/rule
-
-# Convenience name for target.
-inputlag: _deps/glfw-build/tests/CMakeFiles/inputlag.dir/rule
-.PHONY : inputlag
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/inputlag.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/inputlag.dir/build.make _deps/glfw-build/tests/CMakeFiles/inputlag.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/inputlag.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/joysticks.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/joysticks.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/joysticks.dir/build.make _deps/glfw-build/tests/CMakeFiles/joysticks.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/joysticks.dir/build.make _deps/glfw-build/tests/CMakeFiles/joysticks.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=44,45 "Built target joysticks"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/joysticks.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/joysticks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/joysticks.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/joysticks.dir/rule
-
-# Convenience name for target.
-joysticks: _deps/glfw-build/tests/CMakeFiles/joysticks.dir/rule
-.PHONY : joysticks
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/joysticks.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/joysticks.dir/build.make _deps/glfw-build/tests/CMakeFiles/joysticks.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/joysticks.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/opacity.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/opacity.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/opacity.dir/build.make _deps/glfw-build/tests/CMakeFiles/opacity.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/opacity.dir/build.make _deps/glfw-build/tests/CMakeFiles/opacity.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=54,55 "Built target opacity"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/opacity.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/opacity.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/opacity.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/opacity.dir/rule
-
-# Convenience name for target.
-opacity: _deps/glfw-build/tests/CMakeFiles/opacity.dir/rule
-.PHONY : opacity
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/opacity.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/opacity.dir/build.make _deps/glfw-build/tests/CMakeFiles/opacity.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/opacity.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/tearing.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/tearing.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/tearing.dir/build.make _deps/glfw-build/tests/CMakeFiles/tearing.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/tearing.dir/build.make _deps/glfw-build/tests/CMakeFiles/tearing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=75,76 "Built target tearing"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/tearing.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/tearing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/tearing.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/tearing.dir/rule
-
-# Convenience name for target.
-tearing: _deps/glfw-build/tests/CMakeFiles/tearing.dir/rule
-.PHONY : tearing
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/tearing.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/tearing.dir/build.make _deps/glfw-build/tests/CMakeFiles/tearing.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/tearing.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/threads.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/threads.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/threads.dir/build.make _deps/glfw-build/tests/CMakeFiles/threads.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/threads.dir/build.make _deps/glfw-build/tests/CMakeFiles/threads.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=77 "Built target threads"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/threads.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/threads.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/threads.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/threads.dir/rule
-
-# Convenience name for target.
-threads: _deps/glfw-build/tests/CMakeFiles/threads.dir/rule
-.PHONY : threads
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/threads.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/threads.dir/build.make _deps/glfw-build/tests/CMakeFiles/threads.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/threads.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/timeout.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/timeout.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/timeout.dir/build.make _deps/glfw-build/tests/CMakeFiles/timeout.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/timeout.dir/build.make _deps/glfw-build/tests/CMakeFiles/timeout.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=78,79 "Built target timeout"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/timeout.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/timeout.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/timeout.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/timeout.dir/rule
-
-# Convenience name for target.
-timeout: _deps/glfw-build/tests/CMakeFiles/timeout.dir/rule
-.PHONY : timeout
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/timeout.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/timeout.dir/build.make _deps/glfw-build/tests/CMakeFiles/timeout.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/timeout.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/title.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/title.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/title.dir/build.make _deps/glfw-build/tests/CMakeFiles/title.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/title.dir/build.make _deps/glfw-build/tests/CMakeFiles/title.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=80 "Built target title"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/title.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/title.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/title.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/title.dir/rule
-
-# Convenience name for target.
-title: _deps/glfw-build/tests/CMakeFiles/title.dir/rule
-.PHONY : title
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/title.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/title.dir/build.make _deps/glfw-build/tests/CMakeFiles/title.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/title.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/build.make _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/build.make _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=81 "Built target triangle-vulkan"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/rule
-
-# Convenience name for target.
-triangle-vulkan: _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/rule
-.PHONY : triangle-vulkan
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/build.make _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/glfw-build/tests/CMakeFiles/windows.dir
-
-# All Build rule for target.
-_deps/glfw-build/tests/CMakeFiles/windows.dir/all: _deps/glfw-build/src/CMakeFiles/glfw.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/windows.dir/build.make _deps/glfw-build/tests/CMakeFiles/windows.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/windows.dir/build.make _deps/glfw-build/tests/CMakeFiles/windows.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=99,100 "Built target windows"
-.PHONY : _deps/glfw-build/tests/CMakeFiles/windows.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/glfw-build/tests/CMakeFiles/windows.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glfw-build/tests/CMakeFiles/windows.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
-.PHONY : _deps/glfw-build/tests/CMakeFiles/windows.dir/rule
-
-# Convenience name for target.
-windows: _deps/glfw-build/tests/CMakeFiles/windows.dir/rule
-.PHONY : windows
-
-# clean rule for target.
-_deps/glfw-build/tests/CMakeFiles/windows.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/windows.dir/build.make _deps/glfw-build/tests/CMakeFiles/windows.dir/clean
-.PHONY : _deps/glfw-build/tests/CMakeFiles/windows.dir/clean
-
-#=============================================================================
 # Target rules for target _deps/glad-build/CMakeFiles/glad-generate-files.dir
 
 # All Build rule for target.
 _deps/glad-build/CMakeFiles/glad-generate-files.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/glad-build/CMakeFiles/glad-generate-files.dir/build.make _deps/glad-build/CMakeFiles/glad-generate-files.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/glad-build/CMakeFiles/glad-generate-files.dir/build.make _deps/glad-build/CMakeFiles/glad-generate-files.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num= "Built target glad-generate-files"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=26 "Built target glad-generate-files"
 .PHONY : _deps/glad-build/CMakeFiles/glad-generate-files.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/glad-build/CMakeFiles/glad-generate-files.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glad-build/CMakeFiles/glad-generate-files.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/glad-build/CMakeFiles/glad-generate-files.dir/rule
@@ -2823,7 +2009,7 @@ _deps/glad-build/CMakeFiles/glad.dir/all: _deps/glad-build/CMakeFiles/glad-gener
 
 # Build rule for subdir invocation for target.
 _deps/glad-build/CMakeFiles/glad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/glad-build/CMakeFiles/glad.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles 0
 .PHONY : _deps/glad-build/CMakeFiles/glad.dir/rule

@@ -27,9 +27,6 @@
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -91,18 +88,62 @@ blacknode_app_OBJECTS = \
 "CMakeFiles/blacknode_app.dir/src/main_app.cpp.o"
 
 # External object files for target blacknode_app
-blacknode_app_EXTERNAL_OBJECTS =
+blacknode_app_EXTERNAL_OBJECTS = \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o" \
+"/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o"
 
 blacknode_app: CMakeFiles/blacknode_app.dir/src/main_app.cpp.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o
+blacknode_app: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o
 blacknode_app: CMakeFiles/blacknode_app.dir/build.make
 blacknode_app: libblacknode.so
-blacknode_app: _deps/glfw-build/src/libglfw3.a
 blacknode_app: _deps/glad-build/libglad.a
 blacknode_app: /usr/lib/x86_64-linux-gnu/libssl.so
 blacknode_app: /usr/lib/x86_64-linux-gnu/libcrypto.so
 blacknode_app: /usr/lib/x86_64-linux-gnu/librt.a
 blacknode_app: /usr/lib/x86_64-linux-gnu/libm.so
-blacknode_app: /usr/lib/x86_64-linux-gnu/libX11.so
 blacknode_app: /usr/lib/x86_64-linux-gnu/libGLX.so
 blacknode_app: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 blacknode_app: CMakeFiles/blacknode_app.dir/link.txt

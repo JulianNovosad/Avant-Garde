@@ -31,9 +31,6 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -67,6 +64,26 @@ CMAKE_BINARY_DIR = /home/pc/Avant-Garde/Avant-Garde-1/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
+	/usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/pc/Avant-Garde/Avant-Garde-1/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+.PHONY : package_source/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -189,6 +206,45 @@ blacknode_app: cmake_check_build_system
 blacknode_app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode_app.dir/build.make CMakeFiles/blacknode_app.dir/build
 .PHONY : blacknode_app/fast
+
+#=============================================================================
+# Target rules for targets named raylib
+
+# Build rule for target.
+raylib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raylib
+.PHONY : raylib
+
+# fast build rule for target.
+raylib/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build
+.PHONY : raylib/fast
+
+#=============================================================================
+# Target rules for targets named glfw
+
+# Build rule for target.
+glfw: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glfw
+.PHONY : glfw
+
+# fast build rule for target.
+glfw/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build
+.PHONY : glfw/fast
+
+#=============================================================================
+# Target rules for targets named update_mappings
+
+# Build rule for target.
+update_mappings: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 update_mappings
+.PHONY : update_mappings
+
+# fast build rule for target.
+update_mappings/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
+.PHONY : update_mappings/fast
 
 #=============================================================================
 # Target rules for targets named travis_doc
@@ -906,422 +962,6 @@ unittest/fast:
 .PHONY : unittest/fast
 
 #=============================================================================
-# Target rules for targets named uninstall
-
-# Build rule for target.
-uninstall: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uninstall
-.PHONY : uninstall
-
-# fast build rule for target.
-uninstall/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/CMakeFiles/uninstall.dir/build.make _deps/glfw-build/CMakeFiles/uninstall.dir/build
-.PHONY : uninstall/fast
-
-#=============================================================================
-# Target rules for targets named update_mappings
-
-# Build rule for target.
-update_mappings: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 update_mappings
-.PHONY : update_mappings
-
-# fast build rule for target.
-update_mappings/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/src/CMakeFiles/update_mappings.dir/build.make _deps/glfw-build/src/CMakeFiles/update_mappings.dir/build
-.PHONY : update_mappings/fast
-
-#=============================================================================
-# Target rules for targets named glfw
-
-# Build rule for target.
-glfw: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glfw
-.PHONY : glfw
-
-# fast build rule for target.
-glfw/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/src/CMakeFiles/glfw.dir/build.make _deps/glfw-build/src/CMakeFiles/glfw.dir/build
-.PHONY : glfw/fast
-
-#=============================================================================
-# Target rules for targets named boing
-
-# Build rule for target.
-boing: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 boing
-.PHONY : boing
-
-# fast build rule for target.
-boing/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/boing.dir/build.make _deps/glfw-build/examples/CMakeFiles/boing.dir/build
-.PHONY : boing/fast
-
-#=============================================================================
-# Target rules for targets named gears
-
-# Build rule for target.
-gears: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gears
-.PHONY : gears
-
-# fast build rule for target.
-gears/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/gears.dir/build.make _deps/glfw-build/examples/CMakeFiles/gears.dir/build
-.PHONY : gears/fast
-
-#=============================================================================
-# Target rules for targets named heightmap
-
-# Build rule for target.
-heightmap: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 heightmap
-.PHONY : heightmap
-
-# fast build rule for target.
-heightmap/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/heightmap.dir/build.make _deps/glfw-build/examples/CMakeFiles/heightmap.dir/build
-.PHONY : heightmap/fast
-
-#=============================================================================
-# Target rules for targets named offscreen
-
-# Build rule for target.
-offscreen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 offscreen
-.PHONY : offscreen
-
-# fast build rule for target.
-offscreen/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/offscreen.dir/build.make _deps/glfw-build/examples/CMakeFiles/offscreen.dir/build
-.PHONY : offscreen/fast
-
-#=============================================================================
-# Target rules for targets named particles
-
-# Build rule for target.
-particles: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 particles
-.PHONY : particles
-
-# fast build rule for target.
-particles/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/particles.dir/build.make _deps/glfw-build/examples/CMakeFiles/particles.dir/build
-.PHONY : particles/fast
-
-#=============================================================================
-# Target rules for targets named sharing
-
-# Build rule for target.
-sharing: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sharing
-.PHONY : sharing
-
-# fast build rule for target.
-sharing/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/sharing.dir/build.make _deps/glfw-build/examples/CMakeFiles/sharing.dir/build
-.PHONY : sharing/fast
-
-#=============================================================================
-# Target rules for targets named simple
-
-# Build rule for target.
-simple: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple
-.PHONY : simple
-
-# fast build rule for target.
-simple/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/simple.dir/build.make _deps/glfw-build/examples/CMakeFiles/simple.dir/build
-.PHONY : simple/fast
-
-#=============================================================================
-# Target rules for targets named splitview
-
-# Build rule for target.
-splitview: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 splitview
-.PHONY : splitview
-
-# fast build rule for target.
-splitview/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/splitview.dir/build.make _deps/glfw-build/examples/CMakeFiles/splitview.dir/build
-.PHONY : splitview/fast
-
-#=============================================================================
-# Target rules for targets named wave
-
-# Build rule for target.
-wave: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wave
-.PHONY : wave
-
-# fast build rule for target.
-wave/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/examples/CMakeFiles/wave.dir/build.make _deps/glfw-build/examples/CMakeFiles/wave.dir/build
-.PHONY : wave/fast
-
-#=============================================================================
-# Target rules for targets named clipboard
-
-# Build rule for target.
-clipboard: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clipboard
-.PHONY : clipboard
-
-# fast build rule for target.
-clipboard/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/clipboard.dir/build.make _deps/glfw-build/tests/CMakeFiles/clipboard.dir/build
-.PHONY : clipboard/fast
-
-#=============================================================================
-# Target rules for targets named events
-
-# Build rule for target.
-events: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 events
-.PHONY : events
-
-# fast build rule for target.
-events/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/events.dir/build.make _deps/glfw-build/tests/CMakeFiles/events.dir/build
-.PHONY : events/fast
-
-#=============================================================================
-# Target rules for targets named msaa
-
-# Build rule for target.
-msaa: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 msaa
-.PHONY : msaa
-
-# fast build rule for target.
-msaa/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/msaa.dir/build.make _deps/glfw-build/tests/CMakeFiles/msaa.dir/build
-.PHONY : msaa/fast
-
-#=============================================================================
-# Target rules for targets named glfwinfo
-
-# Build rule for target.
-glfwinfo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glfwinfo
-.PHONY : glfwinfo
-
-# fast build rule for target.
-glfwinfo/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/build.make _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/build
-.PHONY : glfwinfo/fast
-
-#=============================================================================
-# Target rules for targets named iconify
-
-# Build rule for target.
-iconify: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 iconify
-.PHONY : iconify
-
-# fast build rule for target.
-iconify/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/iconify.dir/build.make _deps/glfw-build/tests/CMakeFiles/iconify.dir/build
-.PHONY : iconify/fast
-
-#=============================================================================
-# Target rules for targets named monitors
-
-# Build rule for target.
-monitors: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 monitors
-.PHONY : monitors
-
-# fast build rule for target.
-monitors/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/monitors.dir/build.make _deps/glfw-build/tests/CMakeFiles/monitors.dir/build
-.PHONY : monitors/fast
-
-#=============================================================================
-# Target rules for targets named reopen
-
-# Build rule for target.
-reopen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reopen
-.PHONY : reopen
-
-# fast build rule for target.
-reopen/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/reopen.dir/build.make _deps/glfw-build/tests/CMakeFiles/reopen.dir/build
-.PHONY : reopen/fast
-
-#=============================================================================
-# Target rules for targets named cursor
-
-# Build rule for target.
-cursor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cursor
-.PHONY : cursor
-
-# fast build rule for target.
-cursor/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/cursor.dir/build.make _deps/glfw-build/tests/CMakeFiles/cursor.dir/build
-.PHONY : cursor/fast
-
-#=============================================================================
-# Target rules for targets named empty
-
-# Build rule for target.
-empty: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 empty
-.PHONY : empty
-
-# fast build rule for target.
-empty/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/empty.dir/build.make _deps/glfw-build/tests/CMakeFiles/empty.dir/build
-.PHONY : empty/fast
-
-#=============================================================================
-# Target rules for targets named gamma
-
-# Build rule for target.
-gamma: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gamma
-.PHONY : gamma
-
-# fast build rule for target.
-gamma/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/gamma.dir/build.make _deps/glfw-build/tests/CMakeFiles/gamma.dir/build
-.PHONY : gamma/fast
-
-#=============================================================================
-# Target rules for targets named icon
-
-# Build rule for target.
-icon: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 icon
-.PHONY : icon
-
-# fast build rule for target.
-icon/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/icon.dir/build.make _deps/glfw-build/tests/CMakeFiles/icon.dir/build
-.PHONY : icon/fast
-
-#=============================================================================
-# Target rules for targets named inputlag
-
-# Build rule for target.
-inputlag: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 inputlag
-.PHONY : inputlag
-
-# fast build rule for target.
-inputlag/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/inputlag.dir/build.make _deps/glfw-build/tests/CMakeFiles/inputlag.dir/build
-.PHONY : inputlag/fast
-
-#=============================================================================
-# Target rules for targets named joysticks
-
-# Build rule for target.
-joysticks: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 joysticks
-.PHONY : joysticks
-
-# fast build rule for target.
-joysticks/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/joysticks.dir/build.make _deps/glfw-build/tests/CMakeFiles/joysticks.dir/build
-.PHONY : joysticks/fast
-
-#=============================================================================
-# Target rules for targets named opacity
-
-# Build rule for target.
-opacity: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 opacity
-.PHONY : opacity
-
-# fast build rule for target.
-opacity/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/opacity.dir/build.make _deps/glfw-build/tests/CMakeFiles/opacity.dir/build
-.PHONY : opacity/fast
-
-#=============================================================================
-# Target rules for targets named tearing
-
-# Build rule for target.
-tearing: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tearing
-.PHONY : tearing
-
-# fast build rule for target.
-tearing/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/tearing.dir/build.make _deps/glfw-build/tests/CMakeFiles/tearing.dir/build
-.PHONY : tearing/fast
-
-#=============================================================================
-# Target rules for targets named threads
-
-# Build rule for target.
-threads: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 threads
-.PHONY : threads
-
-# fast build rule for target.
-threads/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/threads.dir/build.make _deps/glfw-build/tests/CMakeFiles/threads.dir/build
-.PHONY : threads/fast
-
-#=============================================================================
-# Target rules for targets named timeout
-
-# Build rule for target.
-timeout: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 timeout
-.PHONY : timeout
-
-# fast build rule for target.
-timeout/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/timeout.dir/build.make _deps/glfw-build/tests/CMakeFiles/timeout.dir/build
-.PHONY : timeout/fast
-
-#=============================================================================
-# Target rules for targets named title
-
-# Build rule for target.
-title: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 title
-.PHONY : title
-
-# fast build rule for target.
-title/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/title.dir/build.make _deps/glfw-build/tests/CMakeFiles/title.dir/build
-.PHONY : title/fast
-
-#=============================================================================
-# Target rules for targets named triangle-vulkan
-
-# Build rule for target.
-triangle-vulkan: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 triangle-vulkan
-.PHONY : triangle-vulkan
-
-# fast build rule for target.
-triangle-vulkan/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/build.make _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/build
-.PHONY : triangle-vulkan/fast
-
-#=============================================================================
-# Target rules for targets named windows
-
-# Build rule for target.
-windows: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 windows
-.PHONY : windows
-
-# fast build rule for target.
-windows/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/glfw-build/tests/CMakeFiles/windows.dir/build.make _deps/glfw-build/tests/CMakeFiles/windows.dir/build
-.PHONY : windows/fast
-
-#=============================================================================
 # Target rules for targets named glad-generate-files
 
 # Build rule for target.
@@ -1347,6 +987,30 @@ glad/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/glad-build/CMakeFiles/glad.dir/build.make _deps/glad-build/CMakeFiles/glad.dir/build
 .PHONY : glad/fast
 
+src/Network/UdpReceiver.o: src/Network/UdpReceiver.cpp.o
+.PHONY : src/Network/UdpReceiver.o
+
+# target to build an object file
+src/Network/UdpReceiver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.o
+.PHONY : src/Network/UdpReceiver.cpp.o
+
+src/Network/UdpReceiver.i: src/Network/UdpReceiver.cpp.i
+.PHONY : src/Network/UdpReceiver.i
+
+# target to preprocess a source file
+src/Network/UdpReceiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.i
+.PHONY : src/Network/UdpReceiver.cpp.i
+
+src/Network/UdpReceiver.s: src/Network/UdpReceiver.cpp.s
+.PHONY : src/Network/UdpReceiver.s
+
+# target to generate assembly for a file
+src/Network/UdpReceiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.s
+.PHONY : src/Network/UdpReceiver.cpp.s
+
 src/NetworkManager.o: src/NetworkManager.cpp.o
 .PHONY : src/NetworkManager.o
 
@@ -1370,6 +1034,54 @@ src/NetworkManager.s: src/NetworkManager.cpp.s
 src/NetworkManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/NetworkManager.cpp.s
 .PHONY : src/NetworkManager.cpp.s
+
+src/Render/Scene.o: src/Render/Scene.cpp.o
+.PHONY : src/Render/Scene.o
+
+# target to build an object file
+src/Render/Scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/Render/Scene.cpp.o
+.PHONY : src/Render/Scene.cpp.o
+
+src/Render/Scene.i: src/Render/Scene.cpp.i
+.PHONY : src/Render/Scene.i
+
+# target to preprocess a source file
+src/Render/Scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/Render/Scene.cpp.i
+.PHONY : src/Render/Scene.cpp.i
+
+src/Render/Scene.s: src/Render/Scene.cpp.s
+.PHONY : src/Render/Scene.s
+
+# target to generate assembly for a file
+src/Render/Scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/Render/Scene.cpp.s
+.PHONY : src/Render/Scene.cpp.s
+
+src/Video/Decoder.o: src/Video/Decoder.cpp.o
+.PHONY : src/Video/Decoder.o
+
+# target to build an object file
+src/Video/Decoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/Video/Decoder.cpp.o
+.PHONY : src/Video/Decoder.cpp.o
+
+src/Video/Decoder.i: src/Video/Decoder.cpp.i
+.PHONY : src/Video/Decoder.i
+
+# target to preprocess a source file
+src/Video/Decoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/Video/Decoder.cpp.i
+.PHONY : src/Video/Decoder.cpp.i
+
+src/Video/Decoder.s: src/Video/Decoder.cpp.s
+.PHONY : src/Video/Decoder.s
+
+# target to generate assembly for a file
+src/Video/Decoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/Video/Decoder.cpp.s
+.PHONY : src/Video/Decoder.cpp.s
 
 src/core/EventBus.o: src/core/EventBus.cpp.o
 .PHONY : src/core/EventBus.o
@@ -1742,6 +1454,8 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... package"
+	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... Continuous"
 	@echo "... ContinuousBuild"
@@ -1775,68 +1489,48 @@ help:
 	@echo "... glad-generate-files"
 	@echo "... tests"
 	@echo "... travis_doc"
-	@echo "... uninstall"
 	@echo "... update_mappings"
 	@echo "... archivertest"
 	@echo "... blacknode"
 	@echo "... blacknode_app"
-	@echo "... boing"
 	@echo "... capitalize"
-	@echo "... clipboard"
 	@echo "... condense"
-	@echo "... cursor"
-	@echo "... empty"
-	@echo "... events"
 	@echo "... filterkey"
 	@echo "... filterkeydom"
-	@echo "... gamma"
-	@echo "... gears"
 	@echo "... glad"
 	@echo "... glfw"
-	@echo "... glfwinfo"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... heightmap"
-	@echo "... icon"
-	@echo "... iconify"
-	@echo "... inputlag"
-	@echo "... joysticks"
 	@echo "... jsonx"
 	@echo "... lookaheadparser"
 	@echo "... messagereader"
-	@echo "... monitors"
-	@echo "... msaa"
 	@echo "... namespacetest"
-	@echo "... offscreen"
-	@echo "... opacity"
 	@echo "... parsebyparts"
-	@echo "... particles"
 	@echo "... perftest"
 	@echo "... pretty"
 	@echo "... prettyauto"
-	@echo "... reopen"
+	@echo "... raylib"
 	@echo "... schemavalidator"
 	@echo "... serialize"
-	@echo "... sharing"
-	@echo "... simple"
 	@echo "... simpledom"
 	@echo "... simplepullreader"
 	@echo "... simplereader"
 	@echo "... simplewriter"
 	@echo "... sortkeys"
-	@echo "... splitview"
-	@echo "... tearing"
-	@echo "... threads"
-	@echo "... timeout"
-	@echo "... title"
-	@echo "... triangle-vulkan"
 	@echo "... tutorial"
 	@echo "... unittest"
-	@echo "... wave"
-	@echo "... windows"
+	@echo "... src/Network/UdpReceiver.o"
+	@echo "... src/Network/UdpReceiver.i"
+	@echo "... src/Network/UdpReceiver.s"
 	@echo "... src/NetworkManager.o"
 	@echo "... src/NetworkManager.i"
 	@echo "... src/NetworkManager.s"
+	@echo "... src/Render/Scene.o"
+	@echo "... src/Render/Scene.i"
+	@echo "... src/Render/Scene.s"
+	@echo "... src/Video/Decoder.o"
+	@echo "... src/Video/Decoder.i"
+	@echo "... src/Video/Decoder.s"
 	@echo "... src/core/EventBus.o"
 	@echo "... src/core/EventBus.i"
 	@echo "... src/core/EventBus.s"

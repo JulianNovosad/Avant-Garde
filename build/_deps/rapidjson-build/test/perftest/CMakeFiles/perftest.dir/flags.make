@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/include -isystem /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/thirdparty/gtest/googletest/include
 
-CXX_FLAGS =  -march=native -Wall -Wextra -Werror -O3 -DNDEBUG -std=gnu++11 -fPIE -Wall -Wextra -Wno-unused-parameter
+CXX_FLAGS =  -march=native -Wall -Wextra -Werror -O3 -DNDEBUG -std=gnu++11 -fPIE
 
