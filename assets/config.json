@@ -1,0 +1,6 @@
+{
+  "use_h264_hardware": false,
+  "video_port": 50000,
+  "telemetry_ports": [50010,50011,50012,50013,50014],
+  "control_port": 50020
+}
