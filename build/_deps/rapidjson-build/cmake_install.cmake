@@ -148,8 +148,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-build/doc/cmake_install.cmake")
-  include("/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-build/example/cmake_install.cmake")
-  include("/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-build/test/cmake_install.cmake")
 
 endif()
 

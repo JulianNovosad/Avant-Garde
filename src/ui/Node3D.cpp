@@ -24,7 +24,7 @@ glm::vec4 Node3D::getColorVec4() const{
 }
 
 const char* Node3D::vertexShaderSrc(){
-    return R"GLSL(#version 320 es
+    return R"GLSL(#version 330 core
 layout(location = 0) in vec3 aPos;
 layout(location = 1) in vec3 aNormal;
 uniform mat4 uMVP;
@@ -34,8 +34,7 @@ void main(){ vNormal = aNormal; gl_Position = uMVP * vec4(aPos,1.0); }
 }
 
 const char* Node3D::fragmentShaderSrc(){
-    return R"GLSL(#version 320 es
-precision mediump float;
+    return R"GLSL(#version 330 core
 in vec3 vNormal;
 uniform vec4 uColor;
 out vec4 fragColor;

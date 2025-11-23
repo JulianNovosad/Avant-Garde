@@ -1,0 +1,16 @@
+[  1%] Built target glad-generate-files
+[ 40%] Built target glfw
+[ 45%] Built target glad
+[ 59%] Built target raylib
+[ 61%] Building CXX object CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o
+[ 62%] Building CXX object CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o
+/home/pc/Avant-Garde/Avant-Garde-1/src/ui/HUD.cpp:24:6: error: redefinition of ‘void HUD::update(float)’
+   24 | void HUD::update(float dt){
+      |      ^~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/ui/HUD.cpp:22:6: note: ‘void HUD::update(float)’ previously defined here
+   22 | void HUD::update(float dt){ (void)dt; /* animations could be added here */ }
+      |      ^~~
+gmake[2]: *** [CMakeFiles/blacknode.dir/build.make:314: CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:238: CMakeFiles/blacknode.dir/all] Error 2
+gmake: *** [Makefile:156: all] Error 2

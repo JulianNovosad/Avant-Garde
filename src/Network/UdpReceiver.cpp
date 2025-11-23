@@ -15,6 +15,7 @@
 #include <functional>
 #include <zlib.h> // for crc32
 #include "rapidjson/document.h"
+#include "Network/NetworkPorts.h"
 
 namespace net {
 
@@ -36,7 +37,7 @@ public:
 
     ~UdpReceiver(){ stop(); }
 
-    bool start(uint16_t portVideo=50000, uint16_t portTelemetryStart=50010){
+    bool start(uint16_t portVideo=blacknode::VIDEO_PORT, uint16_t portTelemetryStart=blacknode::TELEMETRY_BASE){
         running = true;
         // start video socket
         videoSock = socket(AF_INET, SOCK_DGRAM, 0);

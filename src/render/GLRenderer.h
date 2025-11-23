@@ -6,6 +6,8 @@
 #include "../ui/TouchController.h"
 #include "../ui/CameraOrbitController.h"
 #include "../ui/SceneGraph.h"
+#include "../ui/HUD.h"
+#include "../ui/FlightInstruments.h"
 
 class GLRenderer {
 public:
@@ -23,6 +25,9 @@ public:
     void setBackpressureLevel(float v){ backpressureLevel = v; }
     // expose camera control for the desktop harness
     CameraOrbitController &cameraRef() { return camera; }
+    HUD* hudRef() { return hud.get(); }
+    // project world position to screen coords (window coords 0..width,0..height)
+    glm::vec2 worldToScreen(const glm::vec3 &world);
     // expose scene graph control and picking/pinning for the harness
     void setSceneGraph(const std::shared_ptr<SceneGraph>& sg){ scene = sg; }
     std::string pickNodeAtScreen(int sx, int sy, int winW, int winH);
@@ -44,6 +49,8 @@ private:
     TouchController touch;
     CameraOrbitController camera;
     float backpressureLevel = 0.0f;
+    std::unique_ptr<HUD> hud;
+    std::unique_ptr<FlightInstruments> instruments;
     void buildCube();
     void buildLineResources();
     void buildOverlayResources();

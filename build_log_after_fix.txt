@@ -1,0 +1,24 @@
+[  1%] Built target glad-generate-files
+[ 46%] Built target glfw
+[ 48%] Built target glad
+[ 62%] Built target raylib
+[ 64%] Building CXX object CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.o
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp: In constructor ‘net::UdpReceiver::UdpReceiver(FrameCallback)’:
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:82:19: warning: ‘net::UdpReceiver::cb’ will be initialized after [-Wreorder]
+   82 |     FrameCallback cb;
+      |                   ^~
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:79:23: warning:   ‘std::atomic<bool> net::UdpReceiver::running’ [-Wreorder]
+   79 |     std::atomic<bool> running;
+      |                       ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:36:5: warning:   when initialized here [-Wreorder]
+   36 |     UdpReceiver(FrameCallback cb): cb(cb), running(false) {}
+      |     ^~~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp: In member function ‘void net::UdpReceiver::processVideoPacket(const uint8_t*, size_t)’:
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:122:18: warning: unused variable ‘magic’ [-Wunused-variable]
+  122 |         uint32_t magic = be32(data);
+      |                  ^~~~~
+[ 66%] Linking CXX shared library libblacknode.so
+[ 96%] Built target blacknode
+[ 98%] Building CXX object CMakeFiles/blacknode_app.dir/src/main_app.cpp.o
+[100%] Linking CXX executable blacknode_app
+[100%] Built target blacknode_app

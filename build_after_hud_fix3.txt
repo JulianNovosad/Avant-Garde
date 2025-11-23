@@ -1,0 +1,10 @@
+[  1%] Built target glad-generate-files
+[ 41%] Built target glfw
+[ 46%] Built target glad
+[ 60%] Built target raylib
+[ 62%] Building CXX object CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o
+[ 63%] Linking CXX shared library libblacknode.so
+[ 96%] Built target blacknode
+[ 98%] Building CXX object CMakeFiles/blacknode_app.dir/src/main_app.cpp.o
+[100%] Linking CXX executable blacknode_app
+[100%] Built target blacknode_app

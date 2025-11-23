@@ -2,6 +2,7 @@
 #include <GLES3/gl32.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <iostream>
+#include "../ui/HUD.h"
 
 GLRenderer::GLRenderer(){}
 GLRenderer::~GLRenderer(){ shutdown(); }
@@ -75,6 +76,10 @@ bool GLRenderer::init(int w, int h){
     buildCube();
     proj = glm::perspective(glm::radians(60.0f), (float)w/(float)h, 0.1f, 100.0f);
     view = camera.getViewMatrix();
+    hud = std::make_unique<HUD>();
+    hud->init(w,h);
+    instruments = std::make_unique<FlightInstruments>();
+    instruments->init(w,h);
     return true;
 }
 
@@ -91,6 +96,8 @@ void GLRenderer::update(float dt){
     else for (auto &n: nodes) n->update(dt);
     camera.update(dt);
     backpressureLevel = std::min(1.0f, backpressureLevel); // clamp
+    if (hud) hud->update(dt);
+    if (instruments) instruments->update(dt);
 }
 
 void GLRenderer::render(){
@@ -147,11 +154,24 @@ void GLRenderer::render(){
     }
     // render property card on top
     renderPropertyCard();
+    // render HUD overlays
+    if (instruments) instruments->render();
+    if (hud) hud->render();
+}
+
+glm::vec2 GLRenderer::worldToScreen(const glm::vec3 &world){
+    glm::mat4 vp = proj * camera.getViewMatrix();
+    glm::vec4 wp = vp * glm::vec4(world, 1.0f);
+    if (wp.w == 0.0f) return glm::vec2(-1.0f,-1.0f);
+    glm::vec3 ndc = glm::vec3(wp) / wp.w;
+    float wx = (ndc.x * 0.5f + 0.5f) * (float)width;
+    float wy = (1.0f - (ndc.y * 0.5f + 0.5f)) * (float)height;
+    return glm::vec2(wx, wy);
 }
 
 void GLRenderer::buildLineResources(){
-    const char* vs = "#version 320 es\nlayout(location=0) in vec3 aPos; uniform mat4 uMVP; void main(){ gl_Position = uMVP * vec4(aPos,1.0); }";
-    const char* fs = "#version 320 es\nprecision mediump float; uniform vec4 uColor; out vec4 frag; void main(){ frag = uColor; }";
+    const char* vs = "#version 330 core\nlayout(location=0) in vec3 aPos; uniform mat4 uMVP; void main(){ gl_Position = uMVP * vec4(aPos,1.0); }";
+    const char* fs = "#version 330 core\nuniform vec4 uColor; out vec4 frag; void main(){ frag = uColor; }";
     unsigned int v = compileShader(GL_VERTEX_SHADER, vs);
     unsigned int f = compileShader(GL_FRAGMENT_SHADER, fs);
     lineProg = linkProgram(v,f);
@@ -165,8 +185,8 @@ void GLRenderer::buildLineResources(){
 }
 
 void GLRenderer::buildOverlayResources(){
-    const char* vs = "#version 320 es\nlayout(location=0) in vec2 aPos; uniform mat4 uOrtho; void main(){ gl_Position = uOrtho * vec4(aPos,0.0,1.0); }";
-    const char* fs = "#version 320 es\nprecision mediump float; uniform vec4 uColor; out vec4 frag; void main(){ frag = uColor; }";
+    const char* vs = "#version 330 core\nlayout(location=0) in vec2 aPos; uniform mat4 uOrtho; void main(){ gl_Position = uOrtho * vec4(aPos,0.0,1.0); }";
+    const char* fs = "#version 330 core\nuniform vec4 uColor; out vec4 frag; void main(){ frag = uColor; }";
     unsigned int v = compileShader(GL_VERTEX_SHADER, vs);
     unsigned int f = compileShader(GL_FRAGMENT_SHADER, fs);
     overlayProg = linkProgram(v,f);

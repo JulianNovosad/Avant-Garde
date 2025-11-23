@@ -1,0 +1,200 @@
+[  1%] Built target glad-generate-files
+[  2%] Built target lookaheadparser
+[  3%] Built target filterkey
+[  5%] Built target capitalize
+[  6%] Built target filterkeydom
+[  8%] Built target parsebyparts
+[ 11%] Built target pretty
+[ 11%] Built target messagereader
+[ 15%] Built target prettyauto
+[ 18%] Built target archivertest
+[ 18%] Built target condense
+[ 20%] Built target jsonx
+[ 13%] Built target schemavalidator
+[ 21%] Built target serialize
+[ 23%] Built target simpledom
+[ 39%] Built target glfw
+[ 43%] Built target simplewriter
+[ 44%] Built target simplereader
+[ 44%] Built target glad
+[ 45%] Built target tutorial
+[ 48%] Built target simplepullreader
+[ 48%] Built target sortkeys
+[ 49%] Built target namespacetest
+[ 51%] Built target gtest
+[ 56%] Built target raylib
+[ 56%] Built target examples
+[ 57%] Built target gtest_main
+[ 62%] Built target perftest
+[ 62%] Building CXX object CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.o
+[ 63%] Building CXX object CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o
+[ 65%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/ostreamwrappertest.cpp.o
+[ 65%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/itoatest.cpp.o
+[ 67%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/simdtest.cpp.o
+[ 67%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/strfunctest.cpp.o
+[ 67%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/schematest.cpp.o
+[ 67%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/stringbuffertest.cpp.o
+[ 68%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/regextest.cpp.o
+[ 69%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/strtodtest.cpp.o
+[ 70%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/readertest.cpp.o
+[ 69%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/prettywritertest.cpp.o
+[ 71%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/uritest.cpp.o
+[ 72%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/writertest.cpp.o
+[ 72%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/valuetest.cpp.o
+[ 73%] Building CXX object _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/unittest.cpp.o
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:40:35: error: ‘VIDEO_PORT’ was not declared in this scope; did you mean ‘blacknode::VIDEO_PORT’?
+   40 |     bool start(uint16_t portVideo=VIDEO_PORT, uint16_t portTelemetryStart=TELEMETRY_BASE){
+      |                                   ^~~~~~~~~~
+      |                                   blacknode::VIDEO_PORT
+In file included from /home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:18:
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/NetworkPorts.h:8:24: note: ‘blacknode::VIDEO_PORT’ declared here
+    8 |     constexpr uint16_t VIDEO_PORT = 50000;         // MJPEG video UDP
+      |                        ^~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:40:75: error: ‘TELEMETRY_BASE’ was not declared in this scope; did you mean ‘blacknode::TELEMETRY_BASE’?
+   40 |     bool start(uint16_t portVideo=VIDEO_PORT, uint16_t portTelemetryStart=TELEMETRY_BASE){
+      |                                                                           ^~~~~~~~~~~~~~
+      |                                                                           blacknode::TELEMETRY_BASE
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/NetworkPorts.h:9:24: note: ‘blacknode::TELEMETRY_BASE’ declared here
+    9 |     constexpr uint16_t TELEMETRY_BASE = 50010;     // telemetry UDP base (50010-50014)
+      |                        ^~~~~~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp: In constructor ‘net::UdpReceiver::UdpReceiver(FrameCallback)’:
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:82:19: warning: ‘net::UdpReceiver::cb’ will be initialized after [-Wreorder]
+   82 |     FrameCallback cb;
+      |                   ^~
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:79:23: warning:   ‘std::atomic<bool> net::UdpReceiver::running’ [-Wreorder]
+   79 |     std::atomic<bool> running;
+      |                       ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:36:5: warning:   when initialized here [-Wreorder]
+   36 |     UdpReceiver(FrameCallback cb): cb(cb), running(false) {}
+      |     ^~~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp: In member function ‘void net::UdpReceiver::processVideoPacket(const uint8_t*, size_t)’:
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/UdpReceiver.cpp:122:18: warning: unused variable ‘magic’ [-Wunused-variable]
+  122 |         uint32_t magic = be32(data);
+      |                  ^~~~~
+gmake[2]: *** [CMakeFiles/blacknode.dir/build.make:76: CMakeFiles/blacknode.dir/src/Network/UdpReceiver.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:397: CMakeFiles/blacknode.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+In function ‘void u32toa_naive(uint32_t, char*)’,
+    inlined from ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:62:6:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:103:19: error: writing 16 bytes into a region of size 11 [-Werror=stringop-overflow=]
+  103 |         *buffer++ = *--p;
+      |         ~~~~~~~~~~^~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp: In function ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: destination object ‘buffer1’ of size 11
+   59 |     char buffer1[Traits<T>::kBufferSize];
+      |          ^~~~~~~
+In function ‘void u32toa_naive(uint32_t, char*)’,
+    inlined from ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:62:6:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:103:19: error: writing 1 byte into a region of size 0 [-Werror=stringop-overflow=]
+  103 |         *buffer++ = *--p;
+      |         ~~~~~~~~~~^~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp: In function ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 43 into destination object ‘buffer1’ of size 11
+   59 |     char buffer1[Traits<T>::kBufferSize];
+      |          ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 11 into destination object ‘buffer1’ of size 11
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 43 into destination object ‘buffer1’ of size 11
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 11 into destination object ‘buffer1’ of size 11
+In function ‘void u32toa_naive(uint32_t, char*)’,
+    inlined from ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:62:6:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:103:19: error: writing 1 byte into a region of size 0 [-Werror=stringop-overflow=]
+  103 |         *buffer++ = *--p;
+      |         ~~~~~~~~~~^~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp: In function ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 44 into destination object ‘buffer1’ of size 11
+   59 |     char buffer1[Traits<T>::kBufferSize];
+      |          ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 12 into destination object ‘buffer1’ of size 11
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 44 into destination object ‘buffer1’ of size 11
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 12 into destination object ‘buffer1’ of size 11
+In function ‘void u32toa_naive(uint32_t, char*)’,
+    inlined from ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:62:6:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:103:19: error: writing 1 byte into a region of size 0 [-Werror=stringop-overflow=]
+  103 |         *buffer++ = *--p;
+      |         ~~~~~~~~~~^~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp: In function ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 45 into destination object ‘buffer1’ of size 11
+   59 |     char buffer1[Traits<T>::kBufferSize];
+      |          ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 11
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 45 into destination object ‘buffer1’ of size 11
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 11
+In function ‘void u32toa_naive(uint32_t, char*)’,
+    inlined from ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:62:6:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:103:19: error: writing 1 byte into a region of size 0 [-Werror=stringop-overflow=]
+  103 |         *buffer++ = *--p;
+      |         ~~~~~~~~~~^~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp: In function ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = unsigned int]’:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 46 into destination object ‘buffer1’ of size 11
+   59 |     char buffer1[Traits<T>::kBufferSize];
+      |          ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 11
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 46 into destination object ‘buffer1’ of size 11
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 11
+In function ‘void u32toa_naive(uint32_t, char*)’,
+    inlined from ‘void i32toa_naive(int32_t, char*)’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:115:17,
+    inlined from ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = int]’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:62:6:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:103:19: error: writing 16 bytes into a region of size 12 [-Werror=stringop-overflow=]
+  103 |         *buffer++ = *--p;
+      |         ~~~~~~~~~~^~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp: In function ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = int]’:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset [0, 11] into destination object ‘buffer1’ of size 12
+   59 |     char buffer1[Traits<T>::kBufferSize];
+      |          ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset [1, 12] into destination object ‘buffer1’ of size 12
+In function ‘void u32toa_naive(uint32_t, char*)’,
+    inlined from ‘void i32toa_naive(int32_t, char*)’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:115:17,
+    inlined from ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = int]’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:62:6:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:103:19: error: writing 1 byte into a region of size 0 [-Werror=stringop-overflow=]
+  103 |         *buffer++ = *--p;
+      |         ~~~~~~~~~~^~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp: In function ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = int]’:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 12 into destination object ‘buffer1’ of size 12
+   59 |     char buffer1[Traits<T>::kBufferSize];
+      |          ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 12 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 12 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 12 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 12
+In function ‘void u32toa_naive(uint32_t, char*)’,
+    inlined from ‘void i32toa_naive(int32_t, char*)’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:115:17,
+    inlined from ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = int]’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:62:6:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:103:19: error: writing 1 byte into a region of size 0 [-Werror=stringop-overflow=]
+  103 |         *buffer++ = *--p;
+      |         ~~~~~~~~~~^~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp: In function ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = int]’:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 12
+   59 |     char buffer1[Traits<T>::kBufferSize];
+      |          ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 13 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 12
+In function ‘void u32toa_naive(uint32_t, char*)’,
+    inlined from ‘void i32toa_naive(int32_t, char*)’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:115:17,
+    inlined from ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = int]’ at /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:62:6:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:103:19: error: writing 1 byte into a region of size 0 [-Werror=stringop-overflow=]
+  103 |         *buffer++ = *--p;
+      |         ~~~~~~~~~~^~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp: In function ‘void VerifyValue(T, void (*)(T, char*), char* (*)(T, char*)) [with T = int]’:
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 12
+   59 |     char buffer1[Traits<T>::kBufferSize];
+      |          ^~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 15 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 15 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 15 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 14 into destination object ‘buffer1’ of size 12
+/home/pc/Avant-Garde/Avant-Garde-1/build/_deps/rapidjson-src/test/unittest/itoatest.cpp:59:10: note: at offset 15 into destination object ‘buffer1’ of size 12
+cc1plus: all warnings being treated as errors
+gmake[2]: *** [_deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/build.make:216: _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/itoatest.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:1954: _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/all] Error 2
+gmake: *** [Makefile:156: all] Error 2

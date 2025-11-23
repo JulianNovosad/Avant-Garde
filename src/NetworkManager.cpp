@@ -9,9 +9,8 @@
 #include <rapidjson/document.h>
 #include <iostream>
 
-static const uint16_t VIDEO_PORT = 50000;
-static const uint16_t TELEMETRY_BASE = 50010; // 50010-50014
-static const uint16_t CONTROL_PORT = 50020;
+#include "Network/NetworkPorts.h"
+using namespace blacknode;
 
 NetworkManager::NetworkManager() {
     framesPool.resize(4);

@@ -5,6 +5,8 @@
 #include <cstdint>
 #include <vector>
 
+#include "Network/NetworkPorts.h"
+
 struct TelemetryPacket {
     uint32_t magic;        // 0xC0A1FACE
     uint64_t timestamp;    // nanos
@@ -19,7 +21,7 @@ public:
     using Callback = std::function<void(const TelemetryPacket&)>;
     UdpReceiver();
     ~UdpReceiver();
-    bool start(uint16_t port = 40321);
+    bool start(uint16_t port = blacknode::DESKTOP_UDP_PORT);
     void stop();
     void setCallback(Callback cb);
 

@@ -195,10 +195,24 @@ CMakeFiles/blacknode.dir/src/net/BackpressureDetector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/blacknode.dir/src/net/BackpressureDetector.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/Avant-Garde/Avant-Garde-1/src/net/BackpressureDetector.cpp -o CMakeFiles/blacknode.dir/src/net/BackpressureDetector.cpp.s
 
+CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o: CMakeFiles/blacknode.dir/flags.make
+CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/net/ControlSender.cpp
+CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o -MF CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o.d -o CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/net/ControlSender.cpp
+
+CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/Avant-Garde/Avant-Garde-1/src/net/ControlSender.cpp > CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.i
+
+CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/Avant-Garde/Avant-Garde-1/src/net/ControlSender.cpp -o CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.s
+
 CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o: CMakeFiles/blacknode.dir/flags.make
 CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/net/TCPClient.cpp
 CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o -MF CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o.d -o CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/net/TCPClient.cpp
 
 CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.s: cmake_force
 CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o: CMakeFiles/blacknode.dir/flags.make
 CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/net/UdpReceiver.cpp
 CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o -MF CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o.d -o CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/net/UdpReceiver.cpp
 
 CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.s: cmake_force
 CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o: CMakeFiles/blacknode.dir/flags.make
 CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/net/WebSocketClient.cpp
 CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o -MF CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o.d -o CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/net/WebSocketClient.cpp
 
 CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.s: cmake_force
 CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o: CMakeFiles/blacknode.dir/flags.make
 CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.cpp
 CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o -MF CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o.d -o CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.cpp
 
 CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.s: cmake_force
 CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o: CMakeFiles/blacknode.dir/flags.make
 CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/ui/CameraOrbitController.cpp
 CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o -MF CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o.d -o CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/ui/CameraOrbitController.cpp
 
 CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.s: cmake_force
 CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o: CMakeFiles/blacknode.dir/flags.make
 CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/ui/Edge3D.cpp
 CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o -MF CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o.d -o CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/ui/Edge3D.cpp
 
 CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.i: cmake_force
@@ -279,10 +293,38 @@ CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/Avant-Garde/Avant-Garde-1/src/ui/Edge3D.cpp -o CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.s
 
+CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o: CMakeFiles/blacknode.dir/flags.make
+CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/ui/FlightInstruments.cpp
+CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o -MF CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o.d -o CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/ui/FlightInstruments.cpp
+
+CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/Avant-Garde/Avant-Garde-1/src/ui/FlightInstruments.cpp > CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.i
+
+CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/Avant-Garde/Avant-Garde-1/src/ui/FlightInstruments.cpp -o CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.s
+
+CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o: CMakeFiles/blacknode.dir/flags.make
+CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/ui/HUD.cpp
+CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o -MF CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o.d -o CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/ui/HUD.cpp
+
+CMakeFiles/blacknode.dir/src/ui/HUD.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/blacknode.dir/src/ui/HUD.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pc/Avant-Garde/Avant-Garde-1/src/ui/HUD.cpp > CMakeFiles/blacknode.dir/src/ui/HUD.cpp.i
+
+CMakeFiles/blacknode.dir/src/ui/HUD.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/blacknode.dir/src/ui/HUD.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pc/Avant-Garde/Avant-Garde-1/src/ui/HUD.cpp -o CMakeFiles/blacknode.dir/src/ui/HUD.cpp.s
+
 CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o: CMakeFiles/blacknode.dir/flags.make
 CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/ui/Node3D.cpp
 CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o -MF CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o.d -o CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/ui/Node3D.cpp
 
 CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.i: cmake_force
@@ -296,7 +338,7 @@ CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.s: cmake_force
 CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o: CMakeFiles/blacknode.dir/flags.make
 CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/ui/SceneGraph.cpp
 CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o -MF CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o.d -o CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/ui/SceneGraph.cpp
 
 CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.i: cmake_force
@@ -310,7 +352,7 @@ CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.s: cmake_force
 CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o: CMakeFiles/blacknode.dir/flags.make
 CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o: /home/pc/Avant-Garde/Avant-Garde-1/src/ui/TouchController.cpp
 CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o: CMakeFiles/blacknode.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o -MF CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o.d -o CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o -c /home/pc/Avant-Garde/Avant-Garde-1/src/ui/TouchController.cpp
 
 CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.i: cmake_force
@@ -332,12 +374,15 @@ blacknode_OBJECTS = \
 "CMakeFiles/blacknode.dir/src/core/NativeBridge.cpp.o" \
 "CMakeFiles/blacknode.dir/src/core/StateMachine.cpp.o" \
 "CMakeFiles/blacknode.dir/src/net/BackpressureDetector.cpp.o" \
+"CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o" \
 "CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o" \
 "CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o" \
 "CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o" \
 "CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o" \
 "CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o" \
 "CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o" \
+"CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o" \
+"CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o" \
 "CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o" \
 "CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o" \
 "CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o"
@@ -354,12 +399,15 @@ libblacknode.so: CMakeFiles/blacknode.dir/src/core/Logger.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/core/NativeBridge.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/core/StateMachine.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/net/BackpressureDetector.cpp.o
+libblacknode.so: CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/net/TCPClient.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/net/UdpReceiver.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/net/WebSocketClient.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/ui/CameraOrbitController.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.o
+libblacknode.so: CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o
+libblacknode.so: CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/ui/Node3D.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/ui/SceneGraph.cpp.o
 libblacknode.so: CMakeFiles/blacknode.dir/src/ui/TouchController.cpp.o
@@ -375,7 +423,7 @@ libblacknode.so: /usr/lib/x86_64-linux-gnu/libGLX.so
 libblacknode.so: /usr/lib/x86_64-linux-gnu/librt.a
 libblacknode.so: /usr/lib/x86_64-linux-gnu/libm.so
 libblacknode.so: CMakeFiles/blacknode.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX shared library libblacknode.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/pc/Avant-Garde/Avant-Garde-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX shared library libblacknode.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/blacknode.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

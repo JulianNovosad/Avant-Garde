@@ -1,6 +1,8 @@
 #include "WebSocketClient.h"
 #include <sys/socket.h>
 #include <netdb.h>
+#include "Network/NetworkPorts.h"
+using namespace blacknode;
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
@@ -44,7 +46,7 @@ static bool parse_ws_url(const std::string &url, std::string &host, uint16_t &po
     std::string hostport = p1==std::string::npos? rest : rest.substr(0,p1);
     path = p1==std::string::npos? "/" : rest.substr(p1);
     size_t colon = hostport.find(':');
-    if (colon==std::string::npos){ host = hostport; port = 80; }
+    if (colon==std::string::npos){ host = hostport; port = DEFAULT_WS_PORT; }
     else { host = hostport.substr(0,colon); port = (uint16_t)atoi(hostport.c_str()+colon+1); }
     return true;
 }

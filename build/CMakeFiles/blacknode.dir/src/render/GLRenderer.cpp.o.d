@@ -359,7 +359,13 @@ CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o: \
  /home/pc/Avant-Garde/Avant-Garde-1/src/render/../ui/CameraOrbitController.h \
  /home/pc/Avant-Garde/Avant-Garde-1/src/render/../ui/SceneGraph.h \
  /home/pc/Avant-Garde/Avant-Garde-1/src/render/../ui/Edge3D.h \
- /usr/include/GLES3/gl32.h /usr/include/GLES3/gl3platform.h \
+ /home/pc/Avant-Garde/Avant-Garde-1/src/render/../ui/HUD.h \
+ /home/pc/Avant-Garde/Avant-Garde-1/src/render/../ui/FlightInstruments.h \
+ /usr/include/c++/13/mutex \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
+ /usr/include/c++/13/bits/std_mutex.h \
+ /usr/include/c++/13/bits/unique_lock.h /usr/include/GLES3/gl32.h \
+ /usr/include/GLES3/gl3platform.h \
  /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glad-build/include/KHR/khrplatform.h \
  /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glm-src/glm/gtc/matrix_transform.hpp \
  /home/pc/Avant-Garde/Avant-Garde-1/build/_deps/glm-src/glm/gtc/../ext/matrix_projection.hpp \
@@ -378,10 +384,8 @@ CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o: \
  /usr/include/c++/13/ios /usr/include/c++/13/bits/ios_base.h \
  /usr/include/c++/13/bits/locale_classes.h \
  /usr/include/c++/13/bits/locale_classes.tcc \
- /usr/include/c++/13/system_error \
- /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
- /usr/include/c++/13/stdexcept /usr/include/c++/13/streambuf \
- /usr/include/c++/13/bits/streambuf.tcc \
+ /usr/include/c++/13/system_error /usr/include/c++/13/stdexcept \
+ /usr/include/c++/13/streambuf /usr/include/c++/13/bits/streambuf.tcc \
  /usr/include/c++/13/bits/basic_ios.h \
  /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
  /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \

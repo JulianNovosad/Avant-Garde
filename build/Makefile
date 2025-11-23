@@ -260,708 +260,6 @@ travis_doc/fast:
 .PHONY : travis_doc/fast
 
 #=============================================================================
-# Target rules for targets named Experimental
-
-# Build rule for target.
-Experimental: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Experimental
-.PHONY : Experimental
-
-# fast build rule for target.
-Experimental/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/Experimental.dir/build.make _deps/rapidjson-build/CMakeFiles/Experimental.dir/build
-.PHONY : Experimental/fast
-
-#=============================================================================
-# Target rules for targets named Nightly
-
-# Build rule for target.
-Nightly: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Nightly
-.PHONY : Nightly
-
-# fast build rule for target.
-Nightly/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/Nightly.dir/build.make _deps/rapidjson-build/CMakeFiles/Nightly.dir/build
-.PHONY : Nightly/fast
-
-#=============================================================================
-# Target rules for targets named Continuous
-
-# Build rule for target.
-Continuous: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Continuous
-.PHONY : Continuous
-
-# fast build rule for target.
-Continuous/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/Continuous.dir/build.make _deps/rapidjson-build/CMakeFiles/Continuous.dir/build
-.PHONY : Continuous/fast
-
-#=============================================================================
-# Target rules for targets named NightlyMemoryCheck
-
-# Build rule for target.
-NightlyMemoryCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyMemoryCheck
-.PHONY : NightlyMemoryCheck
-
-# fast build rule for target.
-NightlyMemoryCheck/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/NightlyMemoryCheck.dir/build.make _deps/rapidjson-build/CMakeFiles/NightlyMemoryCheck.dir/build
-.PHONY : NightlyMemoryCheck/fast
-
-#=============================================================================
-# Target rules for targets named NightlyStart
-
-# Build rule for target.
-NightlyStart: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyStart
-.PHONY : NightlyStart
-
-# fast build rule for target.
-NightlyStart/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/NightlyStart.dir/build.make _deps/rapidjson-build/CMakeFiles/NightlyStart.dir/build
-.PHONY : NightlyStart/fast
-
-#=============================================================================
-# Target rules for targets named NightlyUpdate
-
-# Build rule for target.
-NightlyUpdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyUpdate
-.PHONY : NightlyUpdate
-
-# fast build rule for target.
-NightlyUpdate/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/NightlyUpdate.dir/build.make _deps/rapidjson-build/CMakeFiles/NightlyUpdate.dir/build
-.PHONY : NightlyUpdate/fast
-
-#=============================================================================
-# Target rules for targets named NightlyConfigure
-
-# Build rule for target.
-NightlyConfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyConfigure
-.PHONY : NightlyConfigure
-
-# fast build rule for target.
-NightlyConfigure/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/NightlyConfigure.dir/build.make _deps/rapidjson-build/CMakeFiles/NightlyConfigure.dir/build
-.PHONY : NightlyConfigure/fast
-
-#=============================================================================
-# Target rules for targets named NightlyBuild
-
-# Build rule for target.
-NightlyBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyBuild
-.PHONY : NightlyBuild
-
-# fast build rule for target.
-NightlyBuild/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/NightlyBuild.dir/build.make _deps/rapidjson-build/CMakeFiles/NightlyBuild.dir/build
-.PHONY : NightlyBuild/fast
-
-#=============================================================================
-# Target rules for targets named NightlyTest
-
-# Build rule for target.
-NightlyTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyTest
-.PHONY : NightlyTest
-
-# fast build rule for target.
-NightlyTest/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/NightlyTest.dir/build.make _deps/rapidjson-build/CMakeFiles/NightlyTest.dir/build
-.PHONY : NightlyTest/fast
-
-#=============================================================================
-# Target rules for targets named NightlyCoverage
-
-# Build rule for target.
-NightlyCoverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyCoverage
-.PHONY : NightlyCoverage
-
-# fast build rule for target.
-NightlyCoverage/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/NightlyCoverage.dir/build.make _deps/rapidjson-build/CMakeFiles/NightlyCoverage.dir/build
-.PHONY : NightlyCoverage/fast
-
-#=============================================================================
-# Target rules for targets named NightlyMemCheck
-
-# Build rule for target.
-NightlyMemCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyMemCheck
-.PHONY : NightlyMemCheck
-
-# fast build rule for target.
-NightlyMemCheck/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/NightlyMemCheck.dir/build.make _deps/rapidjson-build/CMakeFiles/NightlyMemCheck.dir/build
-.PHONY : NightlyMemCheck/fast
-
-#=============================================================================
-# Target rules for targets named NightlySubmit
-
-# Build rule for target.
-NightlySubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlySubmit
-.PHONY : NightlySubmit
-
-# fast build rule for target.
-NightlySubmit/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/NightlySubmit.dir/build.make _deps/rapidjson-build/CMakeFiles/NightlySubmit.dir/build
-.PHONY : NightlySubmit/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalStart
-
-# Build rule for target.
-ExperimentalStart: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalStart
-.PHONY : ExperimentalStart
-
-# fast build rule for target.
-ExperimentalStart/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ExperimentalStart.dir/build.make _deps/rapidjson-build/CMakeFiles/ExperimentalStart.dir/build
-.PHONY : ExperimentalStart/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalUpdate
-
-# Build rule for target.
-ExperimentalUpdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalUpdate
-.PHONY : ExperimentalUpdate
-
-# fast build rule for target.
-ExperimentalUpdate/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ExperimentalUpdate.dir/build.make _deps/rapidjson-build/CMakeFiles/ExperimentalUpdate.dir/build
-.PHONY : ExperimentalUpdate/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalConfigure
-
-# Build rule for target.
-ExperimentalConfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalConfigure
-.PHONY : ExperimentalConfigure
-
-# fast build rule for target.
-ExperimentalConfigure/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ExperimentalConfigure.dir/build.make _deps/rapidjson-build/CMakeFiles/ExperimentalConfigure.dir/build
-.PHONY : ExperimentalConfigure/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalBuild
-
-# Build rule for target.
-ExperimentalBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalBuild
-.PHONY : ExperimentalBuild
-
-# fast build rule for target.
-ExperimentalBuild/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ExperimentalBuild.dir/build.make _deps/rapidjson-build/CMakeFiles/ExperimentalBuild.dir/build
-.PHONY : ExperimentalBuild/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalTest
-
-# Build rule for target.
-ExperimentalTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalTest
-.PHONY : ExperimentalTest
-
-# fast build rule for target.
-ExperimentalTest/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ExperimentalTest.dir/build.make _deps/rapidjson-build/CMakeFiles/ExperimentalTest.dir/build
-.PHONY : ExperimentalTest/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalCoverage
-
-# Build rule for target.
-ExperimentalCoverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalCoverage
-.PHONY : ExperimentalCoverage
-
-# fast build rule for target.
-ExperimentalCoverage/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ExperimentalCoverage.dir/build.make _deps/rapidjson-build/CMakeFiles/ExperimentalCoverage.dir/build
-.PHONY : ExperimentalCoverage/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalMemCheck
-
-# Build rule for target.
-ExperimentalMemCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalMemCheck
-.PHONY : ExperimentalMemCheck
-
-# fast build rule for target.
-ExperimentalMemCheck/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ExperimentalMemCheck.dir/build.make _deps/rapidjson-build/CMakeFiles/ExperimentalMemCheck.dir/build
-.PHONY : ExperimentalMemCheck/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalSubmit
-
-# Build rule for target.
-ExperimentalSubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalSubmit
-.PHONY : ExperimentalSubmit
-
-# fast build rule for target.
-ExperimentalSubmit/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ExperimentalSubmit.dir/build.make _deps/rapidjson-build/CMakeFiles/ExperimentalSubmit.dir/build
-.PHONY : ExperimentalSubmit/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousStart
-
-# Build rule for target.
-ContinuousStart: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousStart
-.PHONY : ContinuousStart
-
-# fast build rule for target.
-ContinuousStart/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ContinuousStart.dir/build.make _deps/rapidjson-build/CMakeFiles/ContinuousStart.dir/build
-.PHONY : ContinuousStart/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousUpdate
-
-# Build rule for target.
-ContinuousUpdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousUpdate
-.PHONY : ContinuousUpdate
-
-# fast build rule for target.
-ContinuousUpdate/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ContinuousUpdate.dir/build.make _deps/rapidjson-build/CMakeFiles/ContinuousUpdate.dir/build
-.PHONY : ContinuousUpdate/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousConfigure
-
-# Build rule for target.
-ContinuousConfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousConfigure
-.PHONY : ContinuousConfigure
-
-# fast build rule for target.
-ContinuousConfigure/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ContinuousConfigure.dir/build.make _deps/rapidjson-build/CMakeFiles/ContinuousConfigure.dir/build
-.PHONY : ContinuousConfigure/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousBuild
-
-# Build rule for target.
-ContinuousBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousBuild
-.PHONY : ContinuousBuild
-
-# fast build rule for target.
-ContinuousBuild/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ContinuousBuild.dir/build.make _deps/rapidjson-build/CMakeFiles/ContinuousBuild.dir/build
-.PHONY : ContinuousBuild/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousTest
-
-# Build rule for target.
-ContinuousTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousTest
-.PHONY : ContinuousTest
-
-# fast build rule for target.
-ContinuousTest/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ContinuousTest.dir/build.make _deps/rapidjson-build/CMakeFiles/ContinuousTest.dir/build
-.PHONY : ContinuousTest/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousCoverage
-
-# Build rule for target.
-ContinuousCoverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousCoverage
-.PHONY : ContinuousCoverage
-
-# fast build rule for target.
-ContinuousCoverage/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ContinuousCoverage.dir/build.make _deps/rapidjson-build/CMakeFiles/ContinuousCoverage.dir/build
-.PHONY : ContinuousCoverage/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousMemCheck
-
-# Build rule for target.
-ContinuousMemCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousMemCheck
-.PHONY : ContinuousMemCheck
-
-# fast build rule for target.
-ContinuousMemCheck/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ContinuousMemCheck.dir/build.make _deps/rapidjson-build/CMakeFiles/ContinuousMemCheck.dir/build
-.PHONY : ContinuousMemCheck/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousSubmit
-
-# Build rule for target.
-ContinuousSubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousSubmit
-.PHONY : ContinuousSubmit
-
-# fast build rule for target.
-ContinuousSubmit/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/CMakeFiles/ContinuousSubmit.dir/build.make _deps/rapidjson-build/CMakeFiles/ContinuousSubmit.dir/build
-.PHONY : ContinuousSubmit/fast
-
-#=============================================================================
-# Target rules for targets named archivertest
-
-# Build rule for target.
-archivertest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 archivertest
-.PHONY : archivertest
-
-# fast build rule for target.
-archivertest/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/build.make _deps/rapidjson-build/example/CMakeFiles/archivertest.dir/build
-.PHONY : archivertest/fast
-
-#=============================================================================
-# Target rules for targets named capitalize
-
-# Build rule for target.
-capitalize: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 capitalize
-.PHONY : capitalize
-
-# fast build rule for target.
-capitalize/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/capitalize.dir/build.make _deps/rapidjson-build/example/CMakeFiles/capitalize.dir/build
-.PHONY : capitalize/fast
-
-#=============================================================================
-# Target rules for targets named condense
-
-# Build rule for target.
-condense: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 condense
-.PHONY : condense
-
-# fast build rule for target.
-condense/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/condense.dir/build.make _deps/rapidjson-build/example/CMakeFiles/condense.dir/build
-.PHONY : condense/fast
-
-#=============================================================================
-# Target rules for targets named filterkey
-
-# Build rule for target.
-filterkey: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 filterkey
-.PHONY : filterkey
-
-# fast build rule for target.
-filterkey/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/filterkey.dir/build.make _deps/rapidjson-build/example/CMakeFiles/filterkey.dir/build
-.PHONY : filterkey/fast
-
-#=============================================================================
-# Target rules for targets named filterkeydom
-
-# Build rule for target.
-filterkeydom: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 filterkeydom
-.PHONY : filterkeydom
-
-# fast build rule for target.
-filterkeydom/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/build.make _deps/rapidjson-build/example/CMakeFiles/filterkeydom.dir/build
-.PHONY : filterkeydom/fast
-
-#=============================================================================
-# Target rules for targets named jsonx
-
-# Build rule for target.
-jsonx: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 jsonx
-.PHONY : jsonx
-
-# fast build rule for target.
-jsonx/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/build.make _deps/rapidjson-build/example/CMakeFiles/jsonx.dir/build
-.PHONY : jsonx/fast
-
-#=============================================================================
-# Target rules for targets named lookaheadparser
-
-# Build rule for target.
-lookaheadparser: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lookaheadparser
-.PHONY : lookaheadparser
-
-# fast build rule for target.
-lookaheadparser/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/lookaheadparser.dir/build.make _deps/rapidjson-build/example/CMakeFiles/lookaheadparser.dir/build
-.PHONY : lookaheadparser/fast
-
-#=============================================================================
-# Target rules for targets named messagereader
-
-# Build rule for target.
-messagereader: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 messagereader
-.PHONY : messagereader
-
-# fast build rule for target.
-messagereader/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/build.make _deps/rapidjson-build/example/CMakeFiles/messagereader.dir/build
-.PHONY : messagereader/fast
-
-#=============================================================================
-# Target rules for targets named parsebyparts
-
-# Build rule for target.
-parsebyparts: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 parsebyparts
-.PHONY : parsebyparts
-
-# fast build rule for target.
-parsebyparts/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/parsebyparts.dir/build.make _deps/rapidjson-build/example/CMakeFiles/parsebyparts.dir/build
-.PHONY : parsebyparts/fast
-
-#=============================================================================
-# Target rules for targets named pretty
-
-# Build rule for target.
-pretty: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pretty
-.PHONY : pretty
-
-# fast build rule for target.
-pretty/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/pretty.dir/build.make _deps/rapidjson-build/example/CMakeFiles/pretty.dir/build
-.PHONY : pretty/fast
-
-#=============================================================================
-# Target rules for targets named prettyauto
-
-# Build rule for target.
-prettyauto: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prettyauto
-.PHONY : prettyauto
-
-# fast build rule for target.
-prettyauto/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/build.make _deps/rapidjson-build/example/CMakeFiles/prettyauto.dir/build
-.PHONY : prettyauto/fast
-
-#=============================================================================
-# Target rules for targets named schemavalidator
-
-# Build rule for target.
-schemavalidator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 schemavalidator
-.PHONY : schemavalidator
-
-# fast build rule for target.
-schemavalidator/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/build.make _deps/rapidjson-build/example/CMakeFiles/schemavalidator.dir/build
-.PHONY : schemavalidator/fast
-
-#=============================================================================
-# Target rules for targets named serialize
-
-# Build rule for target.
-serialize: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 serialize
-.PHONY : serialize
-
-# fast build rule for target.
-serialize/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/serialize.dir/build.make _deps/rapidjson-build/example/CMakeFiles/serialize.dir/build
-.PHONY : serialize/fast
-
-#=============================================================================
-# Target rules for targets named simpledom
-
-# Build rule for target.
-simpledom: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simpledom
-.PHONY : simpledom
-
-# fast build rule for target.
-simpledom/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simpledom.dir/build
-.PHONY : simpledom/fast
-
-#=============================================================================
-# Target rules for targets named simplereader
-
-# Build rule for target.
-simplereader: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simplereader
-.PHONY : simplereader
-
-# fast build rule for target.
-simplereader/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simplereader.dir/build
-.PHONY : simplereader/fast
-
-#=============================================================================
-# Target rules for targets named simplepullreader
-
-# Build rule for target.
-simplepullreader: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simplepullreader
-.PHONY : simplepullreader
-
-# fast build rule for target.
-simplepullreader/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simplepullreader.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simplepullreader.dir/build
-.PHONY : simplepullreader/fast
-
-#=============================================================================
-# Target rules for targets named simplewriter
-
-# Build rule for target.
-simplewriter: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simplewriter
-.PHONY : simplewriter
-
-# fast build rule for target.
-simplewriter/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/simplewriter.dir/build.make _deps/rapidjson-build/example/CMakeFiles/simplewriter.dir/build
-.PHONY : simplewriter/fast
-
-#=============================================================================
-# Target rules for targets named sortkeys
-
-# Build rule for target.
-sortkeys: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sortkeys
-.PHONY : sortkeys
-
-# fast build rule for target.
-sortkeys/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/build.make _deps/rapidjson-build/example/CMakeFiles/sortkeys.dir/build
-.PHONY : sortkeys/fast
-
-#=============================================================================
-# Target rules for targets named tutorial
-
-# Build rule for target.
-tutorial: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tutorial
-.PHONY : tutorial
-
-# fast build rule for target.
-tutorial/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/tutorial.dir/build.make _deps/rapidjson-build/example/CMakeFiles/tutorial.dir/build
-.PHONY : tutorial/fast
-
-#=============================================================================
-# Target rules for targets named examples
-
-# Build rule for target.
-examples: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples
-.PHONY : examples
-
-# fast build rule for target.
-examples/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/example/CMakeFiles/examples.dir/build.make _deps/rapidjson-build/example/CMakeFiles/examples.dir/build
-.PHONY : examples/fast
-
-#=============================================================================
-# Target rules for targets named tests
-
-# Build rule for target.
-tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
-.PHONY : tests
-
-# fast build rule for target.
-tests/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/CMakeFiles/tests.dir/build.make _deps/rapidjson-build/test/CMakeFiles/tests.dir/build
-.PHONY : tests/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) $(MAKESILENT) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) $(MAKESILENT) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
-#=============================================================================
-# Target rules for targets named perftest
-
-# Build rule for target.
-perftest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 perftest
-.PHONY : perftest
-
-# fast build rule for target.
-perftest/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/build.make _deps/rapidjson-build/test/perftest/CMakeFiles/perftest.dir/build
-.PHONY : perftest/fast
-
-#=============================================================================
-# Target rules for targets named namespacetest
-
-# Build rule for target.
-namespacetest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 namespacetest
-.PHONY : namespacetest
-
-# fast build rule for target.
-namespacetest/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/unittest/CMakeFiles/namespacetest.dir/build.make _deps/rapidjson-build/test/unittest/CMakeFiles/namespacetest.dir/build
-.PHONY : namespacetest/fast
-
-#=============================================================================
-# Target rules for targets named unittest
-
-# Build rule for target.
-unittest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unittest
-.PHONY : unittest
-
-# fast build rule for target.
-unittest/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/build.make _deps/rapidjson-build/test/unittest/CMakeFiles/unittest.dir/build
-.PHONY : unittest/fast
-
-#=============================================================================
 # Target rules for targets named glad-generate-files
 
 # Build rule for target.
@@ -1227,6 +525,30 @@ src/net/BackpressureDetector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/net/BackpressureDetector.cpp.s
 .PHONY : src/net/BackpressureDetector.cpp.s
 
+src/net/ControlSender.o: src/net/ControlSender.cpp.o
+.PHONY : src/net/ControlSender.o
+
+# target to build an object file
+src/net/ControlSender.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.o
+.PHONY : src/net/ControlSender.cpp.o
+
+src/net/ControlSender.i: src/net/ControlSender.cpp.i
+.PHONY : src/net/ControlSender.i
+
+# target to preprocess a source file
+src/net/ControlSender.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.i
+.PHONY : src/net/ControlSender.cpp.i
+
+src/net/ControlSender.s: src/net/ControlSender.cpp.s
+.PHONY : src/net/ControlSender.s
+
+# target to generate assembly for a file
+src/net/ControlSender.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/net/ControlSender.cpp.s
+.PHONY : src/net/ControlSender.cpp.s
+
 src/net/TCPClient.o: src/net/TCPClient.cpp.o
 .PHONY : src/net/TCPClient.o
 
@@ -1371,6 +693,54 @@ src/ui/Edge3D.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/ui/Edge3D.cpp.s
 .PHONY : src/ui/Edge3D.cpp.s
 
+src/ui/FlightInstruments.o: src/ui/FlightInstruments.cpp.o
+.PHONY : src/ui/FlightInstruments.o
+
+# target to build an object file
+src/ui/FlightInstruments.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.o
+.PHONY : src/ui/FlightInstruments.cpp.o
+
+src/ui/FlightInstruments.i: src/ui/FlightInstruments.cpp.i
+.PHONY : src/ui/FlightInstruments.i
+
+# target to preprocess a source file
+src/ui/FlightInstruments.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.i
+.PHONY : src/ui/FlightInstruments.cpp.i
+
+src/ui/FlightInstruments.s: src/ui/FlightInstruments.cpp.s
+.PHONY : src/ui/FlightInstruments.s
+
+# target to generate assembly for a file
+src/ui/FlightInstruments.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/ui/FlightInstruments.cpp.s
+.PHONY : src/ui/FlightInstruments.cpp.s
+
+src/ui/HUD.o: src/ui/HUD.cpp.o
+.PHONY : src/ui/HUD.o
+
+# target to build an object file
+src/ui/HUD.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o
+.PHONY : src/ui/HUD.cpp.o
+
+src/ui/HUD.i: src/ui/HUD.cpp.i
+.PHONY : src/ui/HUD.i
+
+# target to preprocess a source file
+src/ui/HUD.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/ui/HUD.cpp.i
+.PHONY : src/ui/HUD.cpp.i
+
+src/ui/HUD.s: src/ui/HUD.cpp.s
+.PHONY : src/ui/HUD.s
+
+# target to generate assembly for a file
+src/ui/HUD.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blacknode.dir/build.make CMakeFiles/blacknode.dir/src/ui/HUD.cpp.s
+.PHONY : src/ui/HUD.cpp.s
+
 src/ui/Node3D.o: src/ui/Node3D.cpp.o
 .PHONY : src/ui/Node3D.o
 
@@ -1457,68 +827,14 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... Continuous"
-	@echo "... ContinuousBuild"
-	@echo "... ContinuousConfigure"
-	@echo "... ContinuousCoverage"
-	@echo "... ContinuousMemCheck"
-	@echo "... ContinuousStart"
-	@echo "... ContinuousSubmit"
-	@echo "... ContinuousTest"
-	@echo "... ContinuousUpdate"
-	@echo "... Experimental"
-	@echo "... ExperimentalBuild"
-	@echo "... ExperimentalConfigure"
-	@echo "... ExperimentalCoverage"
-	@echo "... ExperimentalMemCheck"
-	@echo "... ExperimentalStart"
-	@echo "... ExperimentalSubmit"
-	@echo "... ExperimentalTest"
-	@echo "... ExperimentalUpdate"
-	@echo "... Nightly"
-	@echo "... NightlyBuild"
-	@echo "... NightlyConfigure"
-	@echo "... NightlyCoverage"
-	@echo "... NightlyMemCheck"
-	@echo "... NightlyMemoryCheck"
-	@echo "... NightlyStart"
-	@echo "... NightlySubmit"
-	@echo "... NightlyTest"
-	@echo "... NightlyUpdate"
-	@echo "... examples"
 	@echo "... glad-generate-files"
-	@echo "... tests"
 	@echo "... travis_doc"
 	@echo "... update_mappings"
-	@echo "... archivertest"
 	@echo "... blacknode"
 	@echo "... blacknode_app"
-	@echo "... capitalize"
-	@echo "... condense"
-	@echo "... filterkey"
-	@echo "... filterkeydom"
 	@echo "... glad"
 	@echo "... glfw"
-	@echo "... gtest"
-	@echo "... gtest_main"
-	@echo "... jsonx"
-	@echo "... lookaheadparser"
-	@echo "... messagereader"
-	@echo "... namespacetest"
-	@echo "... parsebyparts"
-	@echo "... perftest"
-	@echo "... pretty"
-	@echo "... prettyauto"
 	@echo "... raylib"
-	@echo "... schemavalidator"
-	@echo "... serialize"
-	@echo "... simpledom"
-	@echo "... simplepullreader"
-	@echo "... simplereader"
-	@echo "... simplewriter"
-	@echo "... sortkeys"
-	@echo "... tutorial"
-	@echo "... unittest"
 	@echo "... src/Network/UdpReceiver.o"
 	@echo "... src/Network/UdpReceiver.i"
 	@echo "... src/Network/UdpReceiver.s"
@@ -1549,6 +865,9 @@ help:
 	@echo "... src/net/BackpressureDetector.o"
 	@echo "... src/net/BackpressureDetector.i"
 	@echo "... src/net/BackpressureDetector.s"
+	@echo "... src/net/ControlSender.o"
+	@echo "... src/net/ControlSender.i"
+	@echo "... src/net/ControlSender.s"
 	@echo "... src/net/TCPClient.o"
 	@echo "... src/net/TCPClient.i"
 	@echo "... src/net/TCPClient.s"
@@ -1567,6 +886,12 @@ help:
 	@echo "... src/ui/Edge3D.o"
 	@echo "... src/ui/Edge3D.i"
 	@echo "... src/ui/Edge3D.s"
+	@echo "... src/ui/FlightInstruments.o"
+	@echo "... src/ui/FlightInstruments.i"
+	@echo "... src/ui/FlightInstruments.s"
+	@echo "... src/ui/HUD.o"
+	@echo "... src/ui/HUD.i"
+	@echo "... src/ui/HUD.s"
 	@echo "... src/ui/Node3D.o"
 	@echo "... src/ui/Node3D.i"
 	@echo "... src/ui/Node3D.s"

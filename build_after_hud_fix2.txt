@@ -1,0 +1,16 @@
+[  1%] Built target glad-generate-files
+[ 41%] Built target glfw
+[ 46%] Built target glad
+[ 60%] Built target raylib
+[ 62%] Building CXX object CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o
+[ 63%] Building CXX object CMakeFiles/blacknode.dir/src/ui/HUD.cpp.o
+In file included from /home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.cpp:1:
+/home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h:53:15: error: ‘glm::vec2 GLRenderer::worldToScreen(const glm::vec3&)’ cannot be overloaded with ‘glm::vec2 GLRenderer::worldToScreen(const glm::vec3&)’
+   53 |     glm::vec2 worldToScreen(const glm::vec3 &world);
+      |               ^~~~~~~~~~~~~
+/home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h:29:15: note: previous declaration ‘glm::vec2 GLRenderer::worldToScreen(const glm::vec3&)’
+   29 |     glm::vec2 worldToScreen(const glm::vec3 &world);
+      |               ^~~~~~~~~~~~~
+gmake[2]: *** [CMakeFiles/blacknode.dir/build.make:258: CMakeFiles/blacknode.dir/src/render/GLRenderer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:238: CMakeFiles/blacknode.dir/all] Error 2
+gmake: *** [Makefile:156: all] Error 2

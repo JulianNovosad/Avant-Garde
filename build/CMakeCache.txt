@@ -20,7 +20,7 @@ ANDROID:UNINITIALIZED=OFF
 //Build the examples.
 BUILD_EXAMPLES:BOOL=OFF
 
-//Build shared libraries (DLLs).
+//Build shared libraries
 BUILD_SHARED_LIBS:BOOL=OFF
 
 //Build the testing tree.
@@ -584,10 +584,13 @@ RAPIDJSON_BUILD_CXX20:BOOL=OFF
 RAPIDJSON_BUILD_DOC:BOOL=ON
 
 //Build rapidjson examples.
-RAPIDJSON_BUILD_EXAMPLES:BOOL=ON
+RAPIDJSON_BUILD_EXAMPLES:BOOL=OFF
+
+//No help, variable specified on the command line.
+RAPIDJSON_BUILD_GTEST:UNINITIALIZED=OFF
 
 //Build rapidjson perftests and unittests.
-RAPIDJSON_BUILD_TESTS:BOOL=ON
+RAPIDJSON_BUILD_TESTS:BOOL=OFF
 
 //Use gtest installation in `thirdparty/gtest` by default if available
 RAPIDJSON_BUILD_THIRDPARTY_GTEST:BOOL=OFF
@@ -1115,8 +1118,6 @@ CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 CMAKE_COMMAND:INTERNAL=/usr/bin/cmake
 //Path to cpack program executable.
 CMAKE_CPACK_COMMAND:INTERNAL=/usr/bin/cpack
-//ADVANCED property for variable: CMAKE_CTEST_COMMAND
-CMAKE_CTEST_COMMAND-ADVANCED:INTERNAL=1
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
 //ADVANCED property for variable: CMAKE_CXX_COMPILER
@@ -1243,7 +1244,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

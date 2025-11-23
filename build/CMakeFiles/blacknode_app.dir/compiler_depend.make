@@ -168,20 +168,28 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   _deps/rapidjson-src/include/rapidjson/reader.h \
   _deps/rapidjson-src/include/rapidjson/stream.h \
   _deps/raylib-src/src/external/glfw/include/GLFW/glfw3.h \
+  /home/pc/Avant-Garde/Avant-Garde-1/src/Network/NetworkPorts.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/net/BackpressureDetector.h \
+  /home/pc/Avant-Garde/Avant-Garde-1/src/net/ControlSender.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/net/TCPClient.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/net/UdpReceiver.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/net/WebSocketClient.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/core/StateMachine.hpp \
   /home/pc/Avant-Garde/Avant-Garde-1/src/ui/CameraOrbitController.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/ui/Edge3D.h \
+  /home/pc/Avant-Garde/Avant-Garde-1/src/ui/FlightInstruments.h \
+  /home/pc/Avant-Garde/Avant-Garde-1/src/ui/HUD.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/ui/Node3D.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/ui/SceneGraph.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/ui/TouchController.h \
   /home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h \
   /usr/include/alloca.h \
+  /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/asm-generic/sockios.h \
   /usr/include/assert.h \
   /usr/include/c++/13/array \
   /usr/include/c++/13/atomic \
@@ -245,6 +253,7 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   /usr/include/c++/13/bits/specfun.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/std_thread.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -268,6 +277,7 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/this_thread_sleep.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/bits/uses_allocator.h \
@@ -310,6 +320,7 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/memory \
+  /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
@@ -349,8 +360,11 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
   /usr/include/locale.h \
   /usr/include/math.h \
+  /usr/include/netinet/in.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -362,7 +376,12 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
@@ -374,6 +393,7 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
   /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
   /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -394,6 +414,10 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket2.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
@@ -430,7 +454,9 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
@@ -465,6 +491,7 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
@@ -508,7 +535,7 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
@@ -548,6 +575,12 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
+/usr/include/x86_64-linux-gnu/bits/socket2.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+
 /usr/include/x86_64-linux-gnu/bits/select-decl.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
@@ -555,8 +588,6 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
@@ -569,6 +600,10 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+
+/usr/include/x86_64-linux-gnu/bits/in.h:
 
 /usr/include/x86_64-linux-gnu/bits/wchar2.h:
 
@@ -583,6 +618,8 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
@@ -600,9 +637,13 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
 /usr/include/math.h:
 
 /usr/include/locale.h:
+
+/usr/include/linux/stddef.h:
 
 /usr/include/inttypes.h:
 
@@ -662,6 +703,8 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
 
 /usr/include/c++/13/new:
 
+/usr/include/c++/13/mutex:
+
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/c++/13/limits:
@@ -694,9 +737,13 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
 
 /usr/include/c++/13/debug/assertions.h:
 
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
 /usr/include/c++/13/cwctype:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
 
 /usr/include/c++/13/cwchar:
 
@@ -733,6 +780,26 @@ CMakeFiles/blacknode_app.dir/src/main_app.cpp.o: /home/pc/Avant-Garde/Avant-Gard
 /usr/include/c++/13/bits/uses_allocator_args.h:
 
 /usr/include/c++/13/bits/uses_allocator.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+
+/usr/include/c++/13/bits/unique_ptr.h:
+
+/usr/include/c++/13/bits/unique_lock.h:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/c++/13/bits/string_view.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/include/c++/13/bits/streambuf_iterator.h:
+
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+
+/usr/include/c++/13/bits/stream_iterator.h:
 
 /usr/include/c++/13/bits/refwrap.h:
 
@@ -830,6 +897,8 @@ _deps/glm-src/glm/detail/type_mat4x3.hpp:
 
 _deps/glm-src/glm/ext/matrix_float4x3_precision.hpp:
 
+/usr/include/netinet/in.h:
+
 _deps/glm-src/glm/mat2x3.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
@@ -846,6 +915,10 @@ _deps/glm-src/glm/detail/func_geometric.inl:
 
 _deps/glm-src/glm/mat3x4.hpp:
 
+/usr/include/x86_64-linux-gnu/sys/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+
 /usr/include/c++/13/bits/stl_vector.h:
 
 /home/pc/Avant-Garde/Avant-Garde-1/src/render/GLRenderer.h:
@@ -857,6 +930,8 @@ _deps/glm-src/glm/detail/type_vec1.inl:
 /usr/include/c++/13/bits/chrono.h:
 
 _deps/glm-src/glm/detail/type_vec1.hpp:
+
+/home/pc/Avant-Garde/Avant-Garde-1/src/ui/HUD.h:
 
 /usr/include/c++/13/bits/shared_ptr.h:
 
@@ -889,6 +964,10 @@ _deps/glm-src/glm/ext/matrix_double3x2_precision.hpp:
 _deps/glm-src/glm/ext/vector_int4.hpp:
 
 _deps/glm-src/glm/ext/vector_int3_sized.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/asm-generic/bitsperlong.h:
 
 _deps/glm-src/glm/ext/matrix_double3x3_precision.hpp:
 
@@ -1048,6 +1127,8 @@ _deps/rapidjson-src/include/rapidjson/document.h:
 
 _deps/glm-src/glm/mat4x4.hpp:
 
+/usr/include/asm-generic/posix_types.h:
+
 _deps/glm-src/glm/detail/type_vec4.inl:
 
 _deps/glm-src/glm/ext/matrix_double4x2_precision.hpp:
@@ -1072,10 +1153,6 @@ _deps/glm-src/glm/mat2x2.hpp:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-_deps/glm-src/glm/common.hpp:
-
 _deps/glm-src/glm/ext/matrix_double4x4.hpp:
 
 _deps/rapidjson-src/include/rapidjson/internal/meta.h:
@@ -1098,10 +1175,6 @@ _deps/glm-src/glm/ext/matrix_double4x4_precision.hpp:
 
 /home/pc/Avant-Garde/Avant-Garde-1/src/net/TCPClient.h:
 
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/c++/13/bits/string_view.tcc:
-
 _deps/glm-src/glm/ext/matrix_float3x2_precision.hpp:
 
 _deps/glm-src/glm/ext/matrix_float3x3.hpp:
@@ -1109,6 +1182,8 @@ _deps/glm-src/glm/ext/matrix_float3x3.hpp:
 _deps/glm-src/glm/detail/type_vec4.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 _deps/glm-src/glm/ext/matrix_float4x4.hpp:
 
@@ -1133,6 +1208,8 @@ _deps/glm-src/glm/vec3.hpp:
 _deps/glm-src/glm/detail/type_mat3x4.inl:
 
 _deps/glm-src/glm/fwd.hpp:
+
+/usr/include/asm-generic/socket.h:
 
 _deps/glm-src/glm/glm.hpp:
 
@@ -1159,10 +1236,6 @@ _deps/rapidjson-src/include/rapidjson/allocators.h:
 _deps/rapidjson-src/include/rapidjson/error/error.h:
 
 /usr/include/c++/13/bits/align.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
-
-/usr/include/c++/13/bits/unique_ptr.h:
 
 _deps/glm-src/glm/detail/type_mat2x3.inl:
 
@@ -1204,6 +1277,14 @@ _deps/glm-src/glm/ext/matrix_double3x2.hpp:
 
 _deps/raylib-src/src/external/glfw/include/GLFW/glfw3.h:
 
+/home/pc/Avant-Garde/Avant-Garde-1/src/Network/NetworkPorts.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+_deps/glm-src/glm/common.hpp:
+
+/home/pc/Avant-Garde/Avant-Garde-1/src/net/ControlSender.h:
+
 /home/pc/Avant-Garde/Avant-Garde-1/src/net/UdpReceiver.h:
 
 /usr/include/c++/13/bits/alloc_traits.h:
@@ -1217,6 +1298,8 @@ _deps/glm-src/glm/ext/matrix_float3x4.hpp:
 /home/pc/Avant-Garde/Avant-Garde-1/src/ui/CameraOrbitController.h:
 
 /usr/include/c++/13/bits/basic_ios.tcc:
+
+/home/pc/Avant-Garde/Avant-Garde-1/src/ui/FlightInstruments.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
@@ -1237,6 +1320,10 @@ _deps/glm-src/glm/mat3x3.hpp:
 _deps/glm-src/glm/detail/type_mat4x3.inl:
 
 /usr/include/alloca.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/c++/13/bits/move.h:
 
 _deps/glm-src/glm/ext/vector_int2.hpp:
 
@@ -1292,10 +1379,6 @@ _deps/glm-src/glm/detail/type_vec2.inl:
 
 /usr/include/c++/13/bits/enable_special_members.h:
 
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
-
-/usr/include/c++/13/bits/stream_iterator.h:
-
 /usr/include/c++/13/bits/functexcept.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
@@ -1318,11 +1401,17 @@ _deps/glad-build/include/glad/glad.h:
 
 /usr/include/c++/13/bits/locale_classes.h:
 
+/usr/include/c++/13/bits/uniform_int_dist.h:
+
+_deps/glm-src/glm/ext/vector_uint3_sized.hpp:
+
+/usr/include/c++/13/bits/locale_classes.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
 /usr/include/c++/13/bits/localefwd.h:
 
 /usr/include/c++/13/bits/memoryfwd.h:
-
-/usr/include/c++/13/bits/move.h:
 
 /usr/include/c++/13/tuple:
 
@@ -1338,6 +1427,8 @@ _deps/glad-build/include/glad/glad.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio2-decl.h:
 
+/usr/include/linux/posix_types.h:
+
 _deps/glm-src/glm/ext/vector_bool2_precision.hpp:
 
 /usr/include/c++/13/bits/ptr_traits.h:
@@ -1346,11 +1437,17 @@ _deps/glm-src/glm/ext/vector_bool2_precision.hpp:
 
 /usr/include/c++/13/bits/range_access.h:
 
+/usr/include/c++/13/bits/streambuf.tcc:
+
+/usr/include/c++/13/bits/specfun.h:
+
+/usr/include/c++/13/bits/std_mutex.h:
+
+/usr/include/c++/13/bits/stl_construct.h:
+
 /usr/include/c++/13/bits/stl_algo.h:
 
 /usr/include/c++/13/bits/stl_algobase.h:
-
-/usr/include/c++/13/bits/stl_construct.h:
 
 /usr/include/c++/13/bits/stl_function.h:
 
@@ -1377,19 +1474,3 @@ _deps/glm-src/glm/geometric.hpp:
 /usr/include/c++/13/bits/new_allocator.h:
 
 /usr/include/c++/13/bits/stl_uninitialized.h:
-
-/usr/include/c++/13/bits/specfun.h:
-
-/usr/include/c++/13/bits/streambuf.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/usr/include/c++/13/bits/streambuf_iterator.h:
-
-/usr/include/c++/13/bits/stringfwd.h:
-
-_deps/glm-src/glm/ext/vector_uint3_sized.hpp:
-
-/usr/include/c++/13/bits/locale_classes.tcc:
-
-/usr/include/c++/13/bits/uniform_int_dist.h:
