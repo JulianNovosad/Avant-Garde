@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+
+##############################################################################
+##
+##  Gradle wrapper script for UNIX
+##
+##############################################################################
+
+# Resolve the true real path without any symlinks.
+PRG="$0"
+while [ -h "$PRG" ]; do
+    ls=$(ls -ld "$PRG")
+    link=$(expr "$ls" : '.*-> \(.*\)$')
+    if expr "$link" : '/.*' > /dev/null; then
+        PRG="$link"
+    else
+        PRG=$(dirname "$PRG")/"$link"
+    fi
+done
+PRGDIR=$(dirname "$PRG")
+
+# OS specific support (must be 'true' or 'false').
+cygwin=false
+darwin=false
+mingw=false
+case "$(uname)" in
+  CYGWIN*)
+    cygwin=true
+    ;;
+  Darwin*)
+    darwin=true
+    ;;
+  MINGW*)
+    mingw=true
+    ;;
+esac
+
+# Determine the Java command to run.
+if [ -n "$JAVA_HOME" ]; then
+    if [ -x "$JAVA_HOME/jre/bin/java" ]; then
+        JAVA_EXE="$JAVA_HOME/jre/bin/java"
+    elif [ -x "$JAVA_HOME/bin/java" ]; then
+        JAVA_EXE="$JAVA_HOME/bin/java"
+    fi
+fi
+if [ -z "$JAVA_EXE" ]; then
+    JAVA_EXE=$(which java)
+fi
+if [ -z "$JAVA_EXE" ]; then
+    echo "ERROR: JAVA_HOME is not set and no 'java' command can be found in your PATH."
+    echo "Please set the JAVA_HOME variable in your environment to match the"
+    echo "location of your Java installation or add 'java' to your PATH."
+    exit 1
+fi
+
+# Determine the class path for the wrapper.
+APP_HOME=$(dirname $(dirname "$PRGDIR"))
+APP_CLASSPATH="$APP_HOME/gradle/wrapper/gradle-wrapper.jar"
+
+# For Darwin, use -Xdock:name to set the application name in the dock.
+if $darwin; then
+    LAUNCHER_OPTS=(-Xdock:name="Gradle")
+else
+    LAUNCHER_OPTS=()
+fi
+
+# Set default JVM options.
+DEFAULT_JVM_OPTS=()
+
+# Add JVM options.
+JVM_OPTS=()
+if [ -n "$JAVA_OPTS" ]; then
+    JVM_OPTS+=("$JAVA_OPTS")
+fi
+if [ -n "$GRADLE_OPTS" ]; then
+    JVM_OPTS+=("$GRADLE_OPTS")
+fi
+if [ -n "$GRADLE_JVM_ARGS" ]; then
+    JVM_OPTS+=("$GRADLE_JVM_ARGS")
+fi
+if [ -n "$org_gradle_jvmargs" ]; then
+    JVM_OPTS+=("$org_gradle_jvmargs")
+fi
+if [ -n "$GRADLE_USER_HOME" ]; then
+    JVM_OPTS+=("-Dgradle.user.home=$GRADLE_USER_HOME")
+fi
+
+# Execute Gradle.
+exec "$JAVA_EXE" "${LAUNCHER_OPTS[@]}" "${DEFAULT_JVM_OPTS[@]}" "${JVM_OPTS[@]}" \
+    -cp "$APP_CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"

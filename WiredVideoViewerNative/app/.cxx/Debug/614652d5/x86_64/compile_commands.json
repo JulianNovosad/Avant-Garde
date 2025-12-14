@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/pc/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/614652d5/x86_64",
+  "command": "/home/pc/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android21 --gcc-toolchain=/home/pc/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/pc/android-sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dwiredvideoviewer_native_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles/wiredvideoviewer-native.dir/native-lib.cpp.o -c /home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/native-lib.cpp",
+  "file": "/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/native-lib.cpp"
+}
+]

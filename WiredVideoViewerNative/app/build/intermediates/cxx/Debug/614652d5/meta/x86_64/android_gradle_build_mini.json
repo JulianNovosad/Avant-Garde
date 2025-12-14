@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/pc/android-sdk/cmake/3.18.1/bin/ninja",
+      "-C",
+      "/home/pc/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/614652d5/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/pc/android-sdk/cmake/3.18.1/bin/ninja",
+    "-C",
+    "/home/pc/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/614652d5/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "wiredvideoviewer-native::@6890427a1f51a3e7e1df": {
+      "artifactName": "wiredvideoviewer-native",
+      "abi": "x86_64",
+      "output": "/home/pc/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/614652d5/obj/x86_64/libwiredvideoviewer-native.so",
+      "runtimeFiles": []
+    }
+  }
+}

@@ -1,0 +1,4 @@
+/home/pc/android-sdk/cmake/3.18.1/bin/ninja \
+  -C \
+  /home/pc/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/614652d5/armeabi-v7a \
+  wiredvideoviewer-native

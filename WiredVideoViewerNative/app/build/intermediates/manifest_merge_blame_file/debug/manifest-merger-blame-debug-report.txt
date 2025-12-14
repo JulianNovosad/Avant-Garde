@@ -1,0 +1,99 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.wiredvideoviewer"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:6:5-67
+11-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:7:5-79
+12-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+13-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:8:5-79
+13-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:8:22-76
+14    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+14-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:9:5-76
+14-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:9:22-73
+15    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+15-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:10:5-76
+15-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:10:22-73
+16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+16-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:11:5-79
+16-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:11:22-76
+17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+17-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:12:5-81
+17-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:12:22-78
+18
+19    <application
+19-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:14:5-33:19
+20        android:allowBackup="true"
+20-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:15:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.7.0] /home/pc/.gradle/caches/transforms-3/35f14e785962a113a00340816cff396a/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+22        android:dataExtractionRules="@xml/data_extraction_rules"
+22-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:16:9-65
+23        android:debuggable="true"
+24        android:fullBackupContent="@xml/backup_rules"
+24-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:17:9-54
+25        android:icon="@mipmap/ic_launcher"
+25-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:18:9-43
+26        android:label="@string/app_name"
+26-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:19:9-41
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:20:9-54
+28        android:supportsRtl="true"
+28-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:21:9-35
+29        android:theme="@style/Theme.WiredVideoViewerNative"
+29-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:22:9-60
+30        android:usesCleartextTraffic="true" >
+30-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:23:9-44
+31        <activity
+31-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:25:9-32:20
+32            android:name="com.wiredvideoviewer.MainActivity"
+32-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:26:13-41
+33            android:exported="true" >
+33-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:27:13-36
+34            <intent-filter>
+34-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:28:13-31:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:29:17-69
+35-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:29:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:30:17-77
+37-->/home/pc/Avant-Garde/WiredVideoViewerNative/app/src/main/AndroidManifest.xml:30:27-74
+38            </intent-filter>
+39        </activity>
+40
+41        <provider
+41-->[androidx.emoji2:emoji2:1.0.0] /home/pc/.gradle/caches/transforms-3/a9b72fe82ee7cd6a5382a9119256133b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+42            android:name="androidx.startup.InitializationProvider"
+42-->[androidx.emoji2:emoji2:1.0.0] /home/pc/.gradle/caches/transforms-3/a9b72fe82ee7cd6a5382a9119256133b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+43            android:authorities="com.wiredvideoviewer.androidx-startup"
+43-->[androidx.emoji2:emoji2:1.0.0] /home/pc/.gradle/caches/transforms-3/a9b72fe82ee7cd6a5382a9119256133b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+44            android:exported="false" >
+44-->[androidx.emoji2:emoji2:1.0.0] /home/pc/.gradle/caches/transforms-3/a9b72fe82ee7cd6a5382a9119256133b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+45            <meta-data
+45-->[androidx.emoji2:emoji2:1.0.0] /home/pc/.gradle/caches/transforms-3/a9b72fe82ee7cd6a5382a9119256133b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+46                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+46-->[androidx.emoji2:emoji2:1.0.0] /home/pc/.gradle/caches/transforms-3/a9b72fe82ee7cd6a5382a9119256133b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+47                android:value="androidx.startup" />
+47-->[androidx.emoji2:emoji2:1.0.0] /home/pc/.gradle/caches/transforms-3/a9b72fe82ee7cd6a5382a9119256133b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+48            <meta-data
+48-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/pc/.gradle/caches/transforms-3/95ec1d33ebf9bd0bc58e28e0e41f0318/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+49                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+49-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/pc/.gradle/caches/transforms-3/95ec1d33ebf9bd0bc58e28e0e41f0318/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+50                android:value="androidx.startup" />
+50-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/pc/.gradle/caches/transforms-3/95ec1d33ebf9bd0bc58e28e0e41f0318/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+51        </provider>
+52    </application>
+53
+54</manifest>

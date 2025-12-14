@@ -1,0 +1,1 @@
+/home/pc/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/614652d5/obj/arm64-v8a

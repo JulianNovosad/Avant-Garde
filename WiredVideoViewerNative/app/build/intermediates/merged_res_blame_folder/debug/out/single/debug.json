@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/layout_activity_main.xml.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/xml_data_extraction_rules.xml.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.wiredvideoviewer.app-merged_res-26:/layout_activity_main.xml.flat",
+        "source": "com.wiredvideoviewer.app-main-28:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/xml_backup_rules.xml.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-mdpi/ic_launcher_round.png"
+    }
+]

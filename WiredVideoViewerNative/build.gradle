@@ -1,0 +1,25 @@
+buildscript {
+    ext {
+        kotlin_version = "1.7.20" // Use the same Kotlin version as before
+        ndkVersion = "23.1.7779620" // Use the same NDK version as before
+        minSdkVersion = 21
+        compileSdkVersion = 33
+        targetSdkVersion = 33
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.1' // Use the same AGP version as before
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    // Repositories are defined in settings.gradle
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

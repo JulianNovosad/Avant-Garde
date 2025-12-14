@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.wiredvideoviewer.app-mergeDebugResources-25:/layout/activity_main.xml",
+        "source": "com.wiredvideoviewer.app-main-28:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-mergeDebugResources-25:/layout/activity_main.xml",
+        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/layout/activity_main.xml"
+    }
+]

@@ -1,0 +1,13 @@
+# ninja log v5
+0	344	1765699428	CMakeFiles/wiredvideoviewer-native.dir/native-lib.cpp.o	1c1cf9f4f86fe805
+344	393	1765699428	/home/pc/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/614652d5/obj/x86_64/libwiredvideoviewer-native.so	9cff910501e1dff
+0	2	0	clean	5b1306f91f17bbe4
+1	326	1765699644	CMakeFiles/wiredvideoviewer-native.dir/native-lib.cpp.o	1c1cf9f4f86fe805
+326	354	1765699644	/home/pc/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/614652d5/obj/x86_64/libwiredvideoviewer-native.so	9cff910501e1dff
+1	304	1765700581	CMakeFiles/wiredvideoviewer-native.dir/native-lib.cpp.o	1c1cf9f4f86fe805
+304	331	1765700581	/home/pc/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/614652d5/obj/x86_64/libwiredvideoviewer-native.so	9cff910501e1dff
+1	317	1765700692	CMakeFiles/wiredvideoviewer-native.dir/native-lib.cpp.o	1c1cf9f4f86fe805
+317	347	1765700692	/home/pc/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/614652d5/obj/x86_64/libwiredvideoviewer-native.so	9cff910501e1dff
+1	69	1765702675	/home/pc/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/614652d5/obj/x86_64/libwiredvideoviewer-native.so	9cff910501e1dff
+1	311	1765704632	CMakeFiles/wiredvideoviewer-native.dir/native-lib.cpp.o	1c1cf9f4f86fe805
+311	340	1765704632	/home/pc/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/614652d5/obj/x86_64/libwiredvideoviewer-native.so	9cff910501e1dff
