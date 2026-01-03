@@ -1,0 +1,4 @@
+/home/julian/Android/cmake/3.18.1/bin/ninja \
+  -C \
+  /home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/armeabi-v7a \
+  wiredvideoviewer-native

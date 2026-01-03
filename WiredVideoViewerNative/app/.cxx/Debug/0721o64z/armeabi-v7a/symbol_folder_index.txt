@@ -1,0 +1,1 @@
+/home/julian/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/0721o64z/obj/armeabi-v7a

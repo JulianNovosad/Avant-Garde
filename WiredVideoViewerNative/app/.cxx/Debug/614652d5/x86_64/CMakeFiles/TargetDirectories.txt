@@ -1,3 +1,0 @@
-/home/pc/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/614652d5/x86_64/CMakeFiles/rebuild_cache.dir
-/home/pc/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/614652d5/x86_64/CMakeFiles/edit_cache.dir
-/home/pc/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/614652d5/x86_64/CMakeFiles/wiredvideoviewer-native.dir

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.wiredvideoviewer.app-mergeDebugResources-24:/values-watch-v21/values-watch-v21.xml",
+            "outputFile": "com.wiredvideoviewer.app-mergeDebugResources-25:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/home/pc/.gradle/caches/transforms-3/f6426b8a1b318e7d17efa40c7fc2ce89/transformed/appcompat-1.4.1/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "/home/julian/.gradle/caches/transforms-3/16a91ac0f827fc822e404aaf4f0e372c/transformed/appcompat-1.4.1/res/values-watch-v21/values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

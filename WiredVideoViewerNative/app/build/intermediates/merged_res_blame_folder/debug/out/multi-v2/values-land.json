@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.wiredvideoviewer.app-mergeDebugResources-24:/values-land/values-land.xml",
+            "outputFile": "com.wiredvideoviewer.app-mergeDebugResources-25:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/home/pc/.gradle/caches/transforms-3/def01392abd23a0417da045a5c24ae97/transformed/material-1.5.0/res/values-land/values-land.xml",
+                    "source": "/home/julian/.gradle/caches/transforms-3/ba393bf09854354fc19b87c0d5e57820/transformed/material-1.5.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,26,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/pc/.gradle/caches/transforms-3/f6426b8a1b318e7d17efa40c7fc2ce89/transformed/appcompat-1.4.1/res/values-land/values-land.xml",
+                    "source": "/home/julian/.gradle/caches/transforms-3/16a91ac0f827fc822e404aaf4f0e372c/transformed/appcompat-1.4.1/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

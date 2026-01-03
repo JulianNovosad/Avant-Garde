@@ -1,7 +1,7 @@
 # For more information about using CMake with Android Studio, read the
 # documentation: https://developer.android.com/studio/projects/add-native-code#cmake
 
-cmake_minimum_required(VERSION 3.18.1)
+cmake_minimum_required(VERSION 3.10.2)
 project(WiredVideoViewerNative)
 
 # Declares and configures the native shared library.

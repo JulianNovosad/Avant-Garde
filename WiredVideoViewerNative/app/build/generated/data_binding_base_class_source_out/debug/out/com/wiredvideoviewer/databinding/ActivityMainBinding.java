@@ -6,13 +6,17 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.wiredvideoviewer.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -23,10 +27,37 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Spinner deviceSpinner;
+  public final TextView asciiLogo;
+
+  @NonNull
+  public final LinearLayout controlsLayout;
+
+  @NonNull
+  public final TextInputEditText ipAddressEditText;
+
+  @NonNull
+  public final TextInputLayout ipAddressInputLayout;
+
+  @NonNull
+  public final TextView linkStatus;
+
+  @NonNull
+  public final ScrollView logScrollView;
+
+  @NonNull
+  public final TextView logTextView;
 
   @NonNull
   public final TextView orientationData;
+
+  @NonNull
+  public final LinearLayout orientationPanel;
+
+  @NonNull
+  public final FrameLayout scanningOverlay;
+
+  @NonNull
+  public final TextView scanningText;
 
   @NonNull
   public final Button startButton;
@@ -37,15 +68,33 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final SurfaceView surfaceView;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Spinner deviceSpinner,
-      @NonNull TextView orientationData, @NonNull Button startButton, @NonNull Button stopButton,
-      @NonNull SurfaceView surfaceView) {
+  @NonNull
+  public final TextView systemStatus;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView asciiLogo,
+      @NonNull LinearLayout controlsLayout, @NonNull TextInputEditText ipAddressEditText,
+      @NonNull TextInputLayout ipAddressInputLayout, @NonNull TextView linkStatus,
+      @NonNull ScrollView logScrollView, @NonNull TextView logTextView,
+      @NonNull TextView orientationData, @NonNull LinearLayout orientationPanel,
+      @NonNull FrameLayout scanningOverlay, @NonNull TextView scanningText,
+      @NonNull Button startButton, @NonNull Button stopButton, @NonNull SurfaceView surfaceView,
+      @NonNull TextView systemStatus) {
     this.rootView = rootView;
-    this.deviceSpinner = deviceSpinner;
+    this.asciiLogo = asciiLogo;
+    this.controlsLayout = controlsLayout;
+    this.ipAddressEditText = ipAddressEditText;
+    this.ipAddressInputLayout = ipAddressInputLayout;
+    this.linkStatus = linkStatus;
+    this.logScrollView = logScrollView;
+    this.logTextView = logTextView;
     this.orientationData = orientationData;
+    this.orientationPanel = orientationPanel;
+    this.scanningOverlay = scanningOverlay;
+    this.scanningText = scanningText;
     this.startButton = startButton;
     this.stopButton = stopButton;
     this.surfaceView = surfaceView;
+    this.systemStatus = systemStatus;
   }
 
   @Override
@@ -75,15 +124,69 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.deviceSpinner;
-      Spinner deviceSpinner = ViewBindings.findChildViewById(rootView, id);
-      if (deviceSpinner == null) {
+      id = R.id.asciiLogo;
+      TextView asciiLogo = ViewBindings.findChildViewById(rootView, id);
+      if (asciiLogo == null) {
+        break missingId;
+      }
+
+      id = R.id.controlsLayout;
+      LinearLayout controlsLayout = ViewBindings.findChildViewById(rootView, id);
+      if (controlsLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.ipAddressEditText;
+      TextInputEditText ipAddressEditText = ViewBindings.findChildViewById(rootView, id);
+      if (ipAddressEditText == null) {
+        break missingId;
+      }
+
+      id = R.id.ipAddressInputLayout;
+      TextInputLayout ipAddressInputLayout = ViewBindings.findChildViewById(rootView, id);
+      if (ipAddressInputLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.linkStatus;
+      TextView linkStatus = ViewBindings.findChildViewById(rootView, id);
+      if (linkStatus == null) {
+        break missingId;
+      }
+
+      id = R.id.logScrollView;
+      ScrollView logScrollView = ViewBindings.findChildViewById(rootView, id);
+      if (logScrollView == null) {
+        break missingId;
+      }
+
+      id = R.id.logTextView;
+      TextView logTextView = ViewBindings.findChildViewById(rootView, id);
+      if (logTextView == null) {
         break missingId;
       }
 
       id = R.id.orientationData;
       TextView orientationData = ViewBindings.findChildViewById(rootView, id);
       if (orientationData == null) {
+        break missingId;
+      }
+
+      id = R.id.orientationPanel;
+      LinearLayout orientationPanel = ViewBindings.findChildViewById(rootView, id);
+      if (orientationPanel == null) {
+        break missingId;
+      }
+
+      id = R.id.scanningOverlay;
+      FrameLayout scanningOverlay = ViewBindings.findChildViewById(rootView, id);
+      if (scanningOverlay == null) {
+        break missingId;
+      }
+
+      id = R.id.scanningText;
+      TextView scanningText = ViewBindings.findChildViewById(rootView, id);
+      if (scanningText == null) {
         break missingId;
       }
 
@@ -105,8 +208,16 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, deviceSpinner, orientationData,
-          startButton, stopButton, surfaceView);
+      id = R.id.systemStatus;
+      TextView systemStatus = ViewBindings.findChildViewById(rootView, id);
+      if (systemStatus == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, asciiLogo, controlsLayout,
+          ipAddressEditText, ipAddressInputLayout, linkStatus, logScrollView, logTextView,
+          orientationData, orientationPanel, scanningOverlay, scanningText, startButton, stopButton,
+          surfaceView, systemStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

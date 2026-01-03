@@ -1,0 +1,1 @@
+/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt

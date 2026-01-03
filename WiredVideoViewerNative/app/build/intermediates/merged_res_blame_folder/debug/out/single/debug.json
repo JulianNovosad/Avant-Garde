@@ -1,58 +1,66 @@
 [
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/xml_backup_rules.xml.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/xml/backup_rules.xml"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/layout_activity_main.xml.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/layout/activity_main.xml"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/layout_activity_main.xml.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/layout/activity_main.xml"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/drawable_btn_gradient.xml.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/drawable/btn_gradient.xml"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/xml_data_extraction_rules.xml.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/xml_data_extraction_rules.xml.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/xml/data_extraction_rules.xml"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.wiredvideoviewer.app-merged_res-26:/layout_activity_main.xml.flat",
-        "source": "com.wiredvideoviewer.app-main-28:/layout/activity_main.xml"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/drawable_glass_panel.xml.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/drawable/glass_panel.xml"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/drawable_hud_corner.xml.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/drawable/hud_corner.xml"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/xml_backup_rules.xml.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/xml/backup_rules.xml"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-merged_res-26:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/home/pc/.gradle/daemon/8.5/com.wiredvideoviewer.app-main-28:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.wiredvideoviewer.app-merged_res-27:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.wiredvideoviewer.app-main-29:/mipmap-hdpi/ic_launcher.png"
     }
 ]
