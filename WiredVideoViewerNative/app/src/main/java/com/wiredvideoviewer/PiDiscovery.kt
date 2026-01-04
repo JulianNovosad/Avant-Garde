@@ -1,3 +1,7 @@
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.util.Log
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.CoroutineScope
@@ -6,6 +10,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.withContext
+import java.net.Inet4Address
+import java.net.InetSocketAddress
+import java.net.NetworkInterface
+import java.net.Socket
 
 object PiDiscovery {
     private const val TAG = "PiDiscovery"
@@ -100,7 +111,7 @@ object PiDiscovery {
         }
 
         // 3. Evaluation: Prefer Ethernet, then any found Pi
-        val best = candidates.find { it.second } ?: candidates.firstOrNull()
+        val best = candidates.find { it.second }
         
         if (best != null) {
             Log.i(TAG, "FINAL PI SELECTION: ${best.first} (Ethernet priority: ${best.second})")

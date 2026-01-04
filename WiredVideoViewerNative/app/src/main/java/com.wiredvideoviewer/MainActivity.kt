@@ -2,6 +2,7 @@ package com.wiredvideoviewer
 
 import android.content.Context
 import android.content.pm.ActivityInfo
+import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.os.Bundle
@@ -20,6 +21,9 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.net.DatagramSocket
+import java.net.InetAddress
+import java.net.NetworkInterface
 
 class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
@@ -35,7 +39,7 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
     // Core Components
     private var piIpAddress: String? = null
-    private var videoProxy: VideoProxy? = null
+
     private var orientationSender: OrientationSender? = null
     private var mediaPlayer: android.media.MediaPlayer? = null
     
@@ -157,6 +161,11 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
     }
 
     private fun log(message: String) {
+        // Ensure UI updates only happen if the activity is not finishing or destroyed
+        if (isFinishing || isDestroyed) {
+            Log.d("MainActivityLog", "Activity is finishing or destroyed, skipping UI log update: $message")
+            return
+        }
         runOnUiThread {
             Log.d("MainActivityLog", message)
             logTextView.append("$message\n")
@@ -200,7 +209,7 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
             requestPermissions(arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 101)
             return
         }
-        startDiscovery()
+        startConnectionProcess()
     }
 
 
@@ -246,7 +255,7 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
                 if (connectionSuccessful) {
                     systemStatus.text = "STATUS: LINKED"
-                    linkStatus.text = "AURORE MK V // LINKED"
+                    linkStatus.text = "AURORE MK V // Connected via Ethernet"
                     systemStatus.setTextColor(getColor(R.color.accent_red))
                     startButton.text = "CONNECTED"
                     startButton.isEnabled = false
@@ -338,9 +347,11 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
         log("Stopping orientation sender...")
         orientationSender?.stop()
         
+        PiDiscovery.stopMonitoringPi() // Ensure PiDiscovery also stops monitoring
+        
         piIpAddress = null
         systemStatus.text = "STATUS: NOMINAL"
-        linkStatus.text = "AURORE MK V // STANDALONE"
+        linkStatus.text = "AURORE MK V // No connectivity"
         systemStatus.setTextColor(getColor(R.color.accent_red))
         startButton.isEnabled = true
         startButton.text = "INITIALIZE"

@@ -684,12 +684,6 @@ private:
             outputFile.close();
             LOGD("Raw UDP capture file closed during receiver stop.");
         }
-
-        // Close socket if it's still open
-        if (sock_fd != -1) {
-            close(sock_fd);
-            sock_fd = -1;
-        }
         
         LOGD("RTP receiver thread stopped.");
     }
@@ -703,6 +697,7 @@ public:
 
     void start(int port) {
         if (!running_) {
+            LOGD("RtpReceiver: Starting receiver thread for port %d...", port);
             running_ = true;
             receiverThread_ = std::thread(&RtpReceiver::run, this, port);
         }
@@ -711,15 +706,19 @@ public:
     void stop() {
         if (running_) {
             LOGD("Stopping RTP receiver...");
-            running_ = false;
-            if (receiverThread_.joinable()) {
-                receiverThread_.join();
-            }
+            running_ = false; // Signal thread to stop
+            
+            // Close socket BEFORE joining thread to unblock any pending recv()
             if (sock_fd != -1) {
                 close(sock_fd);
                 sock_fd = -1;
-            }
-            // Clear the NAL parser buffer
+                                    LOGD("RTP receiver socket explicitly closed.");
+                                }
+                
+                                if (receiverThread_.joinable()) {
+                                    LOGD("RtpReceiver: Joining receiver thread.");
+                                    receiverThread_.join(); // Wait for thread to finish its loop
+                                }            // Clear the NAL parser buffer
             nalParser.clear();
             frameCounter = 0;
             LOGD("RTP receiver stopped cleanly.");
@@ -998,6 +997,7 @@ public:
 
     void start(const char* ip, int port) {
         if (!running_) {
+            LOGD("RtspReceiver: Starting receiver thread for %s:%d...", ip, port);
             running_ = true;
             receiverThread_ = std::thread(&RtspReceiver::run, this, ip, port);
         }
@@ -1006,13 +1006,18 @@ public:
     void stop() {
         if (running_) {
             LOGD("Stopping RTSP receiver...");
-            running_ = false;
-            if (receiverThread_.joinable()) {
-                receiverThread_.join();
-            }
+            running_ = false; // Signal thread to stop
+
+            // Close socket BEFORE joining thread to unblock any pending recv()
             if (rtsp_sock_fd != -1) {
                 close(rtsp_sock_fd);
                 rtsp_sock_fd = -1;
+                LOGD("RTSP receiver socket explicitly closed.");
+            }
+
+            if (receiverThread_.joinable()) {
+                LOGD("RtspReceiver: Joining receiver thread.");
+                receiverThread_.join(); // Wait for thread to finish its loop
             }
             // Clear the NAL parser buffer
             nalParser.clear();
@@ -1208,14 +1213,14 @@ Java_com_wiredvideoviewer_MainActivity_releaseDecoder(JNIEnv* env, jclass clazz)
         rtpReceiver->stop();
         delete rtpReceiver;
         rtpReceiver = nullptr;
-        LOGD("RTP receiver instance deleted.");
+        LOGD("RTP receiver instance (rtpReceiver) deleted.");
     }
     
     if (rtspReceiver) {
         rtspReceiver->stop();
         delete rtspReceiver;
         rtspReceiver = nullptr;
-        LOGD("RTSP receiver instance deleted.");
+        LOGD("RTSP receiver instance (rtspReceiver) deleted.");
     }
     
     if (decoder) {
