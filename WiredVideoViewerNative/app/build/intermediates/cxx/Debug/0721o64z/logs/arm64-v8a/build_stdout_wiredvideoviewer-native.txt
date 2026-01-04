@@ -1,6 +1,6 @@
 ninja: Entering directory `/home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/arm64-v8a'
 [1/2] Building CXX object CMakeFiles/wiredvideoviewer-native.dir/native-lib.cpp.o
-/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/native-lib.cpp:321:93: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/native-lib.cpp:360:93: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
                 LOGD("Successfully decoded and rendered frame. Presentation Time: %lld us", info.presentationTimeUs);
                                                                                   ~~~~      ^~~~~~~~~~~~~~~~~~~~~~~
                                                                                   %ld

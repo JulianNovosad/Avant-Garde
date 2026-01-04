@@ -128,7 +128,8 @@ public:
     }
 
     bool initDecoder(JNIEnv* env, jobject surface, int surfaceWidth, int surfaceHeight) {
-        LOGD("Initializing decoder...");
+        LOGD("Initializing decoder with surface dimensions: %dx%d", surfaceWidth, surfaceHeight);
+
 
         // If already configured, reset first
         if (isConfigured) {
@@ -159,12 +160,11 @@ public:
         LOGD("Creating media format");
         AMediaFormat* format = AMediaFormat_new();
         AMediaFormat_setString(format, AMEDIAFORMAT_KEY_MIME, MIME_TYPE);
-        // Set actual surface dimensions for initialization
-        AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_WIDTH, surfaceWidth);
-        AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_HEIGHT, surfaceHeight);
-        
+        // Provide known encoder dimensions for initial configuration.
+        // Default to 640x480 based on Pi encoder output.
+        AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_WIDTH, 640);
+        AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_HEIGHT, 480);
         // Explicitly provide SPS and PPS to the MediaCodec for configuration
-        // This is crucial if the NAL parser is not detecting them or if they are embedded in RTP headers.
         AMediaFormat_setBuffer(format, AMEDIAFORMAT_KEY_CSD_0, (void*)H264_SPS_NALU, H264_SPS_NALU_SIZE);
         AMediaFormat_setBuffer(format, AMEDIAFORMAT_KEY_CSD_1, (void*)H264_PPS_NALU, H264_PPS_NALU_SIZE);
 
@@ -302,14 +302,53 @@ public:
                 AMediaFormat* format = AMediaCodec_getOutputFormat(mediaCodec);
                 if (format) {
                     int32_t width, height, colorFormat;
+                    int32_t cropLeft = 0, cropTop = 0, cropRight = 0, cropBottom = 0; // Initialize with 0
+
                     AMediaFormat_getInt32(format, AMEDIAFORMAT_KEY_WIDTH, &width);
                     AMediaFormat_getInt32(format, AMEDIAFORMAT_KEY_HEIGHT, &height);
                     AMediaFormat_getInt32(format, "color-format", &colorFormat);
+
+                    LOGD("OUTPUT_FORMAT_CHANGED");
+                    LOGD("width = %d", width);
+                    LOGD("height = %d", height);
+
+                    // Check for crop information
+                    bool hasCrop = false;
+                    int32_t visibleWidth = width;
+                    int32_t visibleHeight = height;
+
+                    if (AMediaFormat_getInt32(format, "crop-left", &cropLeft) &&
+                        AMediaFormat_getInt32(format, "crop-top", &cropTop) &&
+                        AMediaFormat_getInt32(format, "crop-right", &cropRight) &&
+                        AMediaFormat_getInt32(format, "crop-bottom", &cropBottom)) {
+                        
+                        LOGD("crop = %d,%d -> %d,%d", cropLeft, cropTop, cropRight, cropBottom);
+                        visibleWidth = cropRight - cropLeft + 1;
+                        visibleHeight = cropBottom - cropTop + 1;
+                        hasCrop = true;
+                    }
+
+                    if (hasCrop) {
+                        LOGD("Visible width = %d", visibleWidth);
+                        LOGD("Visible height = %d", visibleHeight);
+                    }
                     
-                    LOGD("AMEDIACODEC_INFO_OUTPUT_FORMAT_CHANGED: Video format changed: %dx%d, Color Format: %d", width, height, colorFormat);
-                    
-                    videoWidth = width;
-                    videoHeight = height;
+                    int32_t stride = -1;
+                    if (AMediaFormat_getInt32(format, AMEDIAFORMAT_KEY_STRIDE, &stride)) {
+                        LOGD("stride = %d", stride);
+                    }
+
+                    int32_t sliceHeight = -1;
+                    if (AMediaFormat_getInt32(format, AMEDIAFORMAT_KEY_SLICE_HEIGHT, &sliceHeight)) {
+                        LOGD("slice-height = %d", sliceHeight);
+                    }
+
+                    // Update videoWidth and videoHeight with visible dimensions if cropping exists
+                    // Or keep the original width/height if no cropping
+                    videoWidth = hasCrop ? visibleWidth : width;
+                    videoHeight = hasCrop ? visibleHeight : height;
+
+                    LOGD("Color Format: %d", colorFormat); // Keep this existing log.
                     waitForFormatChange = false;
                     AMediaFormat_delete(format);
                 }

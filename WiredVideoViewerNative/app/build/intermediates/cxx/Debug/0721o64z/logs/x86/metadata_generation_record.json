@@ -11,11 +11,11 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -1632248922
+    "memoizedHashCode": -1968032617
   },
   {
     "level_": 0,
-    "message_": "rebuilding JSON /home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/x86/android_gradle_build.json due to:",
+    "message_": "JSON \u0027/home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/x86/android_gradle_build.json\u0027 was up-to-date",
     "file_": "/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt",
     "tag_": "debug|x86",
     "diagnosticCode_": 0,
@@ -25,119 +25,7 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 797829284
-  },
-  {
-    "level_": 0,
-    "message_": "- no fingerprint file, will remove stale configuration folder",
-    "file_": "/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt",
-    "tag_": "debug|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 1888025098
-  },
-  {
-    "level_": 0,
-    "message_": "removing stale contents from \u0027/home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/x86\u0027",
-    "file_": "/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt",
-    "tag_": "debug|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 1104857775
-  },
-  {
-    "level_": 0,
-    "message_": "created folder \u0027/home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/x86\u0027",
-    "file_": "/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt",
-    "tag_": "debug|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1074081861
-  },
-  {
-    "level_": 0,
-    "message_": "executing cmake /home/julian/Android/cmake/3.18.1/bin/cmake \\\n  -H/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d28 \\\n  -DANDROID_PLATFORM\u003dandroid-28 \\\n  -DANDROID_ABI\u003dx86 \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003dx86 \\\n  -DANDROID_NDK\u003d/home/julian/Android/ndk/android-ndk-r23b \\\n  -DCMAKE_ANDROID_NDK\u003d/home/julian/Android/ndk/android-ndk-r23b \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/home/julian/Android/ndk/android-ndk-r23b/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/home/julian/Android/cmake/3.18.1/bin/ninja \\\n  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/home/julian/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/0721o64z/obj/x86 \\\n  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/home/julian/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/0721o64z/obj/x86 \\\n  -DCMAKE_BUILD_TYPE\u003dDebug \\\n  -B/home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/x86 \\\n  -GNinja \\\n  -DANDROID_ARM_NEON\u003dTRUE\n",
-    "file_": "/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt",
-    "tag_": "debug|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1886622809
-  },
-  {
-    "level_": 0,
-    "message_": "/home/julian/Android/cmake/3.18.1/bin/cmake \\\n  -H/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d28 \\\n  -DANDROID_PLATFORM\u003dandroid-28 \\\n  -DANDROID_ABI\u003dx86 \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003dx86 \\\n  -DANDROID_NDK\u003d/home/julian/Android/ndk/android-ndk-r23b \\\n  -DCMAKE_ANDROID_NDK\u003d/home/julian/Android/ndk/android-ndk-r23b \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/home/julian/Android/ndk/android-ndk-r23b/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/home/julian/Android/cmake/3.18.1/bin/ninja \\\n  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/home/julian/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/0721o64z/obj/x86 \\\n  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/home/julian/Avant-Garde/WiredVideoViewerNative/app/build/intermediates/cxx/Debug/0721o64z/obj/x86 \\\n  -DCMAKE_BUILD_TYPE\u003dDebug \\\n  -B/home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/x86 \\\n  -GNinja \\\n  -DANDROID_ARM_NEON\u003dTRUE\n",
-    "file_": "/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt",
-    "tag_": "debug|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 1716393510
-  },
-  {
-    "level_": 0,
-    "message_": "Exiting generation of /home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/x86/compile_commands.json.bin normally",
-    "file_": "/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt",
-    "tag_": "debug|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1784087872
-  },
-  {
-    "level_": 0,
-    "message_": "done executing cmake",
-    "file_": "/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt",
-    "tag_": "debug|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -521986422
-  },
-  {
-    "level_": 0,
-    "message_": "hard linked /home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/Debug/0721o64z/x86/compile_commands.json to /home/julian/Avant-Garde/WiredVideoViewerNative/app/.cxx/tools/debug/x86/compile_commands.json",
-    "file_": "/home/julian/Avant-Garde/WiredVideoViewerNative/app/src/main/cpp/CMakeLists.txt",
-    "tag_": "debug|x86",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1461254822
+    "memoizedHashCode": -17078516
   },
   {
     "level_": 0,
@@ -151,6 +39,6 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 1416086662
+    "memoizedHashCode": 1080302967
   }
 ]

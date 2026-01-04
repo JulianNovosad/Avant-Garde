@@ -124,6 +124,36 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
         startButton.setOnClickListener { handleStartButton() }
         stopButton.setOnClickListener { handleStopButton() }
+
+        // Start Pi IP monitoring
+        PiDiscovery.startMonitoringPi(this, lifecycleScope)
+        
+        // Observe changes in Pi IP address
+        lifecycleScope.launch {
+            PiDiscovery.piIpFlow.collect { newIp ->
+                if (newIp != null && newIp != piIpAddress) {
+                    log("Discovered new Pi IP: $newIp. Reconnecting...")
+                    piIpAddress = newIp
+                    if (startButton.text == "CONNECTED") { // Only restart if already connected
+                        log("Stopping current streaming to reconnect to new IP.")
+                        handleStopButton() // Stop current streaming gracefully
+                        // Delay briefly to allow resources to release
+                        delay(500) 
+                        startConnectionProcess() // Re-initiate connection process with new IP
+                    } else if (startButton.text == "RETRY" || startButton.text == "INITIALIZE") {
+                        // If not connected yet, try to connect immediately
+                        startConnectionProcess()
+                    }
+                } else if (newIp == null && piIpAddress != null) {
+                    log("Pi IP lost. Disconnecting.")
+                    handleStopButton() // Stop streaming if Pi is lost
+                    systemStatus.text = "STATUS: OFFLINE"
+                    startButton.text = "RETRY"
+                    startButton.isEnabled = true
+                    android.widget.Toast.makeText(this@MainActivity, "PI LOST", android.widget.Toast.LENGTH_LONG).show()
+                }
+            }
+        }
     }
 
     private fun log(message: String) {
@@ -137,11 +167,13 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
     override fun onResume() {
         super.onResume()
         registerSensors()
+        PiDiscovery.startMonitoringPi(this, lifecycleScope)
     }
 
     override fun onPause() {
         super.onPause()
         unregisterSensors()
+        PiDiscovery.stopMonitoringPi()
     }
 
     private fun registerSensors() {
@@ -171,62 +203,70 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
         startDiscovery()
     }
 
-    private fun startDiscovery() {
-        startConnectionProcess()
-    }
+
 
     private fun startConnectionProcess() {
         lifecycleScope.launch {
             startButton.isEnabled = false
-            var finalIp: String? = null
 
-            // Discovery Process
-            scanningOverlay.visibility = android.view.View.VISIBLE
-            
-            // ASCII Typing Effect
+            // ASCII Typing Effect - always show this when attempting connection
             asciiLogo.text = ""
             LOGO_ASCII.forEach { char ->
                 asciiLogo.append(char.toString())
                 if (char != ' ' && char != '\n') delay(5)
             }
-            
-            var discoveredIp: String? = null
-            for (attempt in 1..3) {
-                log("Discovery attempt $attempt of 3...")
-                scanningText.text = "DISCOVERING... (ATTEMPT $attempt/3)"
-                discoveredIp = PiDiscovery.findPi(this@MainActivity)
-                if (discoveredIp != null) {
-                    log("Discovery successful. Found Pi at $discoveredIp")
-                    break
+
+            if (piIpAddress != null) {
+                // Now that piIpAddress is set by the flow, proceed with connection
+                scanningOverlay.visibility = android.view.View.GONE
+                
+                var connectionSuccessful = false
+                var retryCount = 0
+                val maxRetries = 5
+                var delayTime = 1000L // 1 second initial delay
+
+                while (!connectionSuccessful && retryCount < maxRetries) {
+                    try {
+                        // Then send START command to ControlModule
+                        val myIp = getLocalIpAddress(piIpAddress!!) ?: "0.0.0.0"
+                        log("Local IP determined as $myIp.")
+                        log("Sending START command to $piIpAddress on port 6005... (Attempt ${retryCount + 1}/${maxRetries})")
+                        ControlClient.sendStartCommand(piIpAddress!!, myIp, this@MainActivity::log)
+                        connectionSuccessful = true
+                    } catch (e: Exception) {
+                        log("Connection attempt failed: ${e.message}")
+                        retryCount++
+                        if (retryCount < maxRetries) {
+                            log("Retrying in ${delayTime / 1000} seconds...")
+                            delay(delayTime)
+                            delayTime *= 2 // Exponential back-off
+                        }
+                    }
                 }
-                delay(200)
-            }
-            finalIp = discoveredIp
-            scanningOverlay.visibility = android.view.View.GONE
 
-            if (finalIp != null) {
-                piIpAddress = finalIp
-
-
-                // Then send START command to ControlModule
-                val myIp = getLocalIpAddress(piIpAddress!!) ?: "0.0.0.0"
-                log("Local IP determined as $myIp.")
-                log("Sending START command to $piIpAddress on port 6005...")
-                ControlClient.sendStartCommand(piIpAddress!!, myIp, this@MainActivity::log)
-
-                systemStatus.text = "STATUS: LINKED"
-                linkStatus.text = "AURORE MK V // LINKED"
-                systemStatus.setTextColor(getColor(R.color.accent_red))
-                startButton.text = "CONNECTED"
-                startButton.isEnabled = false
-                log("Connection established with $finalIp. Starting streams.")
-                startStreaming()
+                if (connectionSuccessful) {
+                    systemStatus.text = "STATUS: LINKED"
+                    linkStatus.text = "AURORE MK V // LINKED"
+                    systemStatus.setTextColor(getColor(R.color.accent_red))
+                    startButton.text = "CONNECTED"
+                    startButton.isEnabled = false
+                    log("Connection established with $piIpAddress. Starting streams.")
+                    startStreaming()
+                } else {
+                    log("Failed to establish connection with $piIpAddress after $maxRetries attempts.")
+                    systemStatus.text = "STATUS: OFFLINE"
+                    startButton.text = "RETRY"
+                    startButton.isEnabled = true
+                    android.widget.Toast.makeText(this@MainActivity, "CONNECTION FAILED", android.widget.Toast.LENGTH_LONG).show()
+                }
             } else {
-                log("Connection failed. Pi not found.")
-                systemStatus.text = "STATUS: OFFLINE"
-                startButton.text = "RETRY"
-                startButton.isEnabled = true
-                android.widget.Toast.makeText(this@MainActivity, "PI NOT FOUND", android.widget.Toast.LENGTH_LONG).show()
+                // If piIpAddress is null here, it means PiDiscovery hasn't found it yet
+                // The piIpFlow observer will trigger startConnectionProcess when an IP is found
+                log("Waiting for Pi IP discovery...")
+                scanningOverlay.visibility = android.view.View.VISIBLE
+                scanningText.text = "DISCOVERING..."
+                startButton.text = "SCANNING"
+                startButton.isEnabled = false
             }
         }
     }
@@ -235,7 +275,7 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 101 && grantResults.isNotEmpty() && grantResults[0] == android.content.pm.PackageManager.PERMISSION_GRANTED) {
             log("Location permission granted. Retrying discovery.")
-            startDiscovery()
+            startConnectionProcess()
         } else {
             log("Location permission denied. Cannot perform discovery.")
         }
@@ -360,8 +400,9 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
         val surfaceWidth = holder.surfaceFrame.width()
         val surfaceHeight = holder.surfaceFrame.height()
         Log.d("MainActivity", "Surface created: SurfaceView dimensions: ${surfaceView.width}x${surfaceView.height}, SurfaceHolder dimensions: ${surfaceWidth}x${surfaceHeight}")
-        setActivityReference(this)
         initDecoder(holder.surface, surfaceWidth, surfaceHeight)
+        log("SurfaceView size = ${surfaceView.width} x ${surfaceView.height}")
+        log("SurfaceHolder size = ${holder.surfaceFrame}")
 
         // Start continuous redraw
         frameCallback = object : Choreographer.FrameCallback {
@@ -373,8 +414,9 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
         Choreographer.getInstance().postFrameCallback(frameCallback!!)
     }
     override fun surfaceChanged(holder: SurfaceHolder, format: Int, w: Int, h: Int) {
-        Log.d("MainActivity", "Surface changed: SurfaceView dimensions: ${surfaceView.width}x${surfaceView.height}, New SurfaceHolder dimensions: ${w}x${h}")
         initDecoder(holder.surface, w, h)
+        log("SurfaceView size = ${surfaceView.width} x ${surfaceView.height}")
+        log("SurfaceHolder size = ${holder.surfaceFrame}")
     }
     override fun surfaceDestroyed(holder: SurfaceHolder) {
         // Stop continuous redraw

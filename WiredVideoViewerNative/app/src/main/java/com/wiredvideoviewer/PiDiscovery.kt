@@ -1,24 +1,51 @@
-package com.wiredvideoviewer
-
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.LinkProperties
-import android.net.LinkAddress
-import android.util.Log
-import kotlinx.coroutines.*
-import java.net.Inet4Address
-import java.net.InetAddress
-import java.net.InetSocketAddress
-import java.net.Socket
-import java.net.NetworkInterface
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 
 object PiDiscovery {
     private const val TAG = "PiDiscovery"
     private const val TARGET_PORT = 6005 // Use control listener port
     private const val CONNECT_TIMEOUT_MS = 150 // Slightly more aggressive
     private const val BATCH_SIZE = 64 // Faster scanning
+    private const val SCAN_INTERVAL_MS = 5000L // Scan every 5 seconds
 
-    suspend fun findPi(context: Context): String? = withContext(Dispatchers.IO) {
+    private var monitoringJob: Job? = null
+    private val _piIpFlow = MutableStateFlow<String?>(null)
+    val piIpFlow: StateFlow<String?> = _piIpFlow
+
+    fun startMonitoringPi(context: Context, scope: CoroutineScope) {
+        if (monitoringJob?.isActive == true) return // Already monitoring
+
+        monitoringJob = scope.launch(Dispatchers.IO) {
+            var lastKnownPiIp: String? = null
+            while (isActive) {
+                val currentPiIp = findPiInternal(context)
+                if (currentPiIp != lastKnownPiIp) {
+                    Log.d(TAG, "Pi IP changed from $lastKnownPiIp to $currentPiIp")
+                    _piIpFlow.value = currentPiIp
+                    lastKnownPiIp = currentPiIp
+                } else {
+                    Log.d(TAG, "Pi IP remains $currentPiIp")
+                }
+                delay(SCAN_INTERVAL_MS)
+            }
+        }
+        Log.i(TAG, "Started monitoring for Pi IP changes.")
+    }
+
+    fun stopMonitoringPi() {
+        monitoringJob?.cancel()
+        monitoringJob = null
+        Log.i(TAG, "Stopped monitoring for Pi IP changes.")
+    }
+
+    private suspend fun findPiInternal(context: Context): String? {
+        return withContext(Dispatchers.IO) {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val candidates = mutableListOf<Pair<String, Boolean>>()
 
@@ -80,8 +107,8 @@ object PiDiscovery {
             return@withContext best.first
         }
 
-        Log.e(TAG, "A6 PI NODE NOT FOUND after all attempts.")
         null
+        }
     }
 
     private suspend fun scanSubnet(localIp: Inet4Address, prefixLength: Int): String? = coroutineScope {
